@@ -5,6 +5,7 @@ import { Menu, X, Milk, Beef, Phone, Mail, MapPin, ChevronDown, MessageCircle } 
 import HolsteinPage from "../components/HolsteinPage"
 import JerseyPage from "../components/JerseyPage"
 import PardoSuizoPage from "../components/PardoSuizoPage"
+import AyrshirePage from "../components/AyrshirePage"
 
 interface Breed {
   name: string
