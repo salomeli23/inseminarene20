@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Menu, X, Milk, Beef, Phone, Mail, MapPin, ChevronDown, MessageCircle } from "lucide-react"
 import HolsteinPage from "../components/HolsteinPage"
 import JerseyPage from "../components/JerseyPage"
+import PardoSuizoPage from "../components/PardoSuizoPage"
 
 interface Breed {
   name: string
