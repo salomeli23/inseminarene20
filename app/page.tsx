@@ -22,7 +22,7 @@ interface Category {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
-  const [currentPage, setCurrentPage] = useState<"home" | "holstein">("home")
+  const [currentPage, setCurrentPage] = useState<"home" | "holstein" | "jersey">("home")
 
   const categories: Category[] = [
     {
