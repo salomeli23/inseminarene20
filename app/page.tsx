@@ -247,6 +247,8 @@ export default function Home() {
                                 setCurrentPage("holstein")
                               } else if (breed.name === "JERSEY") {
                                 setCurrentPage("jersey")
+                              } else if (breed.name === "PARDO SUIZO") {
+                                setCurrentPage("pardo-suizo")
                               }
                             }}
                           >
