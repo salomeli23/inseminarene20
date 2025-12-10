@@ -240,6 +240,8 @@ export default function Home() {
                             onClick={() => {
                               if (breed.name === "HOLSTEIN") {
                                 setCurrentPage("holstein")
+                              } else if (breed.name === "JERSEY") {
+                                setCurrentPage("jersey")
                               }
                             }}
                           >
