@@ -88,6 +88,10 @@ export default function Home() {
     return <PardoSuizoPage onBack={() => setCurrentPage("home")} />
   }
 
+  if (currentPage === "ayrshire") {
+    return <AyrshirePage onBack={() => setCurrentPage("home")} />
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all">
