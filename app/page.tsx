@@ -25,7 +25,7 @@ interface Category {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
-  const [currentPage, setCurrentPage] = useState<"home" | "holstein" | "jersey" | "pardo-suizo" | "ayrshire">("home")
+  const [currentPage, setCurrentPage] = useState<"home" | "holstein" | "jersey" | "pardo-suizo" | "ayrshire" | "gyr">("home")
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const heroImages = [
