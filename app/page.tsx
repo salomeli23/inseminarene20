@@ -6,6 +6,7 @@ import HolsteinPage from "../components/HolsteinPage"
 import JerseyPage from "../components/JerseyPage"
 import PardoSuizoPage from "../components/PardoSuizoPage"
 import AyrshirePage from "../components/AyrshirePage"
+import GyrPage from "../components/GyrPage"
 
 interface Breed {
   name: string
