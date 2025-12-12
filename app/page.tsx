@@ -109,13 +109,11 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-36 py-6">
-            <div className="flex items-center space-x-6">
-              <img src="/logoinseminar.png" alt="Inseminar Logo" className="h-28 w-auto object-contain" />
-              <div>
-                <h1 className="text-4xl font-bold text-gray-900">Inseminar de Colombia</h1>
-                <p className="text-base text-gray-600 font-medium mt-1">Genética Bovina de Excelencia</p>
-              </div>
+          <div className="flex justify-between items-center h-24 py-4">
+            <div className="flex items-center space-x-8">
+              <img src="/logoinseminar.png" alt="Inseminar Logo" className="h-20 w-auto object-contain" />
+              <div className="h-16 w-px bg-gray-300"></div>
+              <img src="/partner-logos.png" alt="Partner Logos" className="h-16 w-auto object-contain" />
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
