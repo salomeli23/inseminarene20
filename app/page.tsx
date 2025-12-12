@@ -262,6 +262,15 @@ export default function Home() {
                     className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group"
                   >
                     <div className={`bg-gradient-to-br ${category.color} p-8 text-white relative overflow-hidden`}>
+                      {index === 0 && (
+                        <>
+                          <div 
+                            className="absolute inset-0 bg-cover bg-center opacity-30"
+                            style={{ backgroundImage: "url('/dairy-taurine-bg.jpg')" }}
+                          ></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-cyan-500/80"></div>
+                        </>
+                      )}
                       <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
                       <Icon className="w-12 h-12 mb-4 relative z-10" />
                       <h3 className="text-2xl font-bold mb-2 relative z-10">{category.title}</h3>
