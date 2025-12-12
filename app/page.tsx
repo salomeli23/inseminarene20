@@ -206,12 +206,38 @@ export default function Home() {
               </div>
 
               <div className="flex justify-center lg:justify-end">
-                <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
-                  <img
-                    src="/logoinseminar.png"
-                    alt="Inseminar Logo"
-                    className="w-full max-w-md h-auto object-contain"
-                  />
+                <div className="relative w-full max-w-2xl h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+                  {heroImages.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-1000 ${
+                        index === currentSlide ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`Ganado lechero cebuino ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent"></div>
+                    </div>
+                  ))}
+                  
+                  {/* Indicadores del slider */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                    {heroImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`w-3 h-3 rounded-full transition-all ${
+                          index === currentSlide
+                            ? "bg-white w-8"
+                            : "bg-white/50 hover:bg-white/75"
+                        }`}
+                        aria-label={`Ir a imagen ${index + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
