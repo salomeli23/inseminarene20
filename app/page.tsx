@@ -325,6 +325,8 @@ export default function Home() {
                                 setCurrentPage("pardo-suizo")
                               } else if (breed.name === "AYRSHIRE") {
                                 setCurrentPage("ayrshire")
+                              } else if (breed.name === "GYR") {
+                                setCurrentPage("gyr")
                               }
                             }}
                           >
