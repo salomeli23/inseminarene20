@@ -243,6 +243,54 @@ export default function GyrBullDetailPage({ bull, onBack }: GyrBullDetailPagePro
                   </tbody>
                 </table>
               </div>
+
+              {/* Pedigree Section */}
+              {bull.pedigree && (
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">PEDIGRÍ</h3>
+                  <p className="text-sm text-[#00A0B0] font-semibold mb-4">{bull.pedigree.title}</p>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Sire (Padre) */}
+                    <div className="bg-white rounded-lg p-4 border border-gray-200">
+                      <p className="text-xs text-gray-500 mb-1">PADRE</p>
+                      <p className="font-semibold text-gray-900 text-sm">{bull.pedigree.sire.name}</p>
+                      {bull.pedigree.sire.registro && (
+                        <p className="text-xs text-gray-500">{bull.pedigree.sire.registro}</p>
+                      )}
+                      <div className="mt-3 space-y-2 text-xs">
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Abuelo Pat.:</span>
+                          <span className="text-gray-700 font-medium">{bull.pedigree.sire.siresSire}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Abuela Pat.:</span>
+                          <span className="text-gray-700 font-medium">{bull.pedigree.sire.siresDam}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Dam (Madre) */}
+                    <div className="bg-white rounded-lg p-4 border border-gray-200">
+                      <p className="text-xs text-gray-500 mb-1">MADRE</p>
+                      <p className="font-semibold text-gray-900 text-sm">{bull.pedigree.dam.name}</p>
+                      {bull.pedigree.dam.registro && (
+                        <p className="text-xs text-gray-500">{bull.pedigree.dam.registro}</p>
+                      )}
+                      <div className="mt-3 space-y-2 text-xs">
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Abuelo Mat.:</span>
+                          <span className="text-gray-700 font-medium">{bull.pedigree.dam.damsSire}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Abuela Mat.:</span>
+                          <span className="text-gray-700 font-medium">{bull.pedigree.dam.damsDam}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
