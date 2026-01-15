@@ -599,7 +599,7 @@ function HolsteinPage({ onBack }: HolsteinPageProps) {
       </div>
 
       <a
-        href="https://wa.me/573001234567"
+        href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-16 h-16 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-50 group"

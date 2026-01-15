@@ -160,7 +160,7 @@ function GyrPage({ onBack }: GyrPageProps) {
                       Estamos preparando nuestra selección de toros GYR elite. Pronto tendrás acceso a genética GYR de la más alta calidad.
                     </p>
                     <a
-                      href="https://wa.me/573001234567"
+                      href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
                       className="inline-flex items-center justify-center bg-gradient-to-r from-sky-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all space-x-2"
                     >
                       <MessageCircle className="w-5 h-5" />
@@ -224,7 +224,7 @@ function GyrPage({ onBack }: GyrPageProps) {
                     Contáctanos para recibir asesoría personalizada y conocer disponibilidad de semen de nuestros toros GYR elite
                   </p>
                   <a
-                    href="https://wa.me/573001234567"
+                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-white text-sky-600 px-8 py-4 rounded-lg font-semibold hover:bg-sky-50 transition-all shadow-lg hover:shadow-xl space-x-2"
@@ -240,7 +240,7 @@ function GyrPage({ onBack }: GyrPageProps) {
       </main>
 
       <a
-        href="https://wa.me/573001234567"
+        href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-16 h-16 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-50 group"

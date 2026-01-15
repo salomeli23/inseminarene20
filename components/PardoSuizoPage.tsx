@@ -227,7 +227,7 @@ function PardoSuizoPage({ onBack }: PardoSuizoPageProps) {
                     Contáctanos para recibir asesoría personalizada y conocer disponibilidad de semen de nuestros toros Pardo Suizo elite
                   </p>
                   <a
-                    href="https://wa.me/573001234567"
+                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-white text-amber-600 px-8 py-4 rounded-lg font-semibold hover:bg-amber-50 transition-all shadow-lg hover:shadow-xl space-x-2"
@@ -243,7 +243,7 @@ function PardoSuizoPage({ onBack }: PardoSuizoPageProps) {
       </main>
 
       <a
-        href="https://wa.me/573001234567"
+        href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-16 h-16 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-50 group"
