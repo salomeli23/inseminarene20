@@ -38,7 +38,7 @@ function GyrPage({ onBack }: GyrPageProps) {
       id: "trovao",
       name: "TROVÃO 2B",
       registration: "ZAB1044",
-      imageUrl: "/GYR_TESOURO_2B.jpg",
+      imageUrl: "/TROVAO_PROFILE.jpg",
       summary: "Toro GYR probado con PTA Leite +721 y excelente producción materna",
       highlights: ["PTA Leite: +721", "A2A2 AA AB", "Producción: 11,764 Kg"],
     },
