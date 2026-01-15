@@ -2156,12 +2156,13 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
                   {bull.sireFertility?.map((trait, index) => (
                     <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-2">
                       <span className="font-semibold">{trait.name}</span>
-                    <div className="text-right">
-                      <span className="font-bold">{trait.value}</span>
-                      <span className="text-xs text-gray-600 ml-2">{trait.reliability}</span>
+                      <div className="text-right">
+                        <span className="font-bold">{trait.value}</span>
+                        <span className="text-xs text-gray-600 ml-2">{trait.reliability}</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             )}
           </div>
