@@ -2267,38 +2267,40 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
               </div>
             </div>
 
-            {/* Pedigree */}
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h2 className="text-xl font-bold mb-4">PEDIGRÍ</h2>
-              <div className="space-y-2 text-sm">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <p className="font-semibold text-gray-600">Padre</p>
-                    <p className="font-bold text-[#00A0B0]">{bull.pedigree?.sire}</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-600">Madre</p>
-                    <p className="font-bold">{bull.pedigree?.dam}</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-600">Abuelo Materno</p>
-                    <p className="font-bold">{bull.pedigree?.mgs}</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-600">Abuela Materna</p>
-                    <p className="font-bold">{bull.pedigree?.mgd}</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-600">Bisabuelo Materno</p>
-                    <p className="font-bold">{bull.pedigree?.mgss}</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-600">Bisabuela Materna</p>
-                    <p className="font-bold">{bull.pedigree?.mgsd}</p>
+            {/* Pedigree - Ocultar para EDANK */}
+            {bullId !== "edank" && (
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h2 className="text-xl font-bold mb-4">PEDIGRÍ</h2>
+                <div className="space-y-2 text-sm">
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <p className="font-semibold text-gray-600">Padre</p>
+                      <p className="font-bold text-[#00A0B0]">{bull.pedigree?.sire}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-600">Madre</p>
+                      <p className="font-bold">{bull.pedigree?.dam}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-600">Abuelo Materno</p>
+                      <p className="font-bold">{bull.pedigree?.mgs}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-600">Abuela Materna</p>
+                      <p className="font-bold">{bull.pedigree?.mgd}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-600">Bisabuelo Materno</p>
+                      <p className="font-bold">{bull.pedigree?.mgss}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-600">Bisabuela Materna</p>
+                      <p className="font-bold">{bull.pedigree?.mgsd}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
