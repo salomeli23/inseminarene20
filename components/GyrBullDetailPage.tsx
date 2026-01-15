@@ -2,6 +2,23 @@
 
 import { ArrowLeft, Download, Heart, ShoppingCart } from "lucide-react"
 
+export interface PedigreeAnimal {
+  name: string
+  registro?: string
+}
+
+export interface PedigreeData {
+  title: string
+  sire: PedigreeAnimal & {
+    siresSire: string
+    siresDam: string
+  }
+  dam: PedigreeAnimal & {
+    damsSire: string
+    damsDam: string
+  }
+}
+
 export interface GyrBullData {
   id: string
   code: string
@@ -22,6 +39,7 @@ export interface GyrBullData {
   abczData: Array<{ trait: string; pta: string; conf: string }>
   hasGenChoice?: boolean
   hasToro2A2?: boolean
+  pedigree?: PedigreeData
 }
 
 interface GyrBullDetailPageProps {
