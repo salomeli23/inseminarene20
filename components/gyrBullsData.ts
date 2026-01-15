@@ -207,7 +207,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     betaCaseina: "A2A2",
     kappaCaseina: "AA",
     betaLacto: "BB",
-    imageUrl: "/TESOURO_PROFILE.jpg",
+    imageUrl: "/GATILHO_PROFILE.jpg",
     hasGenChoice: true,
     hasToro2A2: true,
     pnmglData: [
