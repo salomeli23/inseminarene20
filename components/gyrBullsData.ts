@@ -117,6 +117,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
       { trait: "Sólidos Totais %", pta: "0,33", conf: "71" },
     ],
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_trovao.png",
   },
   beneton: {
     id: "beneton",
