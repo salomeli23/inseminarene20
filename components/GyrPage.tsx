@@ -70,7 +70,7 @@ function GyrPage({ onBack }: GyrPageProps) {
       id: "eden",
       name: "ÉDEN",
       registration: "ZAB2466",
-      imageUrl: "/GYR_AMAROK_FIV_2B.jpg",
+      imageUrl: "/EDEN_PROFILE.jpg",
       summary: "Toro GYR joven con excepcional lactación materna de 13,068 Kg",
       highlights: ["En Test: 2030", "A2A2 AA AB", "Producción: 13,068 Kg"],
     },
