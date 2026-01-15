@@ -96,49 +96,70 @@ function GyrPage({ onBack }: GyrPageProps) {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredBulls.map((bull) => (
-                <div
-                  key={bull.id}
-                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group cursor-pointer border border-gray-100"
-                  onClick={() => setSelectedBull(bull.id)}
-                >
-                  <div className="relative h-64 overflow-hidden bg-gradient-to-br from-sky-100 to-blue-100">
-                    <img
-                      src={bull.imageUrl}
-                      alt={bull.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 right-4">
-                      <div className="bg-sky-600 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
-                        <Star className="w-4 h-4" />
-                        <span>Premium</span>
+              {featuredBulls.length > 0 ? (
+                featuredBulls.map((bull) => (
+                  <div
+                    key={bull.id}
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group cursor-pointer border border-gray-100"
+                    onClick={() => setSelectedBull(bull.id)}
+                  >
+                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-sky-100 to-blue-100">
+                      <img
+                        src={bull.imageUrl}
+                        alt={bull.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-4 right-4">
+                        <div className="bg-sky-600 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
+                          <Star className="w-4 h-4" />
+                          <span>Premium</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-sky-600 transition-colors">
-                      {bull.name}
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-3 font-mono">{bull.registration}</p>
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{bull.summary}</p>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-sky-600 transition-colors">
+                        {bull.name}
+                      </h3>
+                      <p className="text-sm text-gray-500 mb-3 font-mono">{bull.registration}</p>
+                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">{bull.summary}</p>
 
-                    <div className="space-y-2 mb-4">
-                      {bull.highlights.map((highlight, index) => (
-                        <div key={index} className="flex items-center space-x-2 text-sm">
-                          <ChevronRight className="w-4 h-4 text-sky-600 flex-shrink-0" />
-                          <span className="text-gray-700">{highlight}</span>
-                        </div>
-                      ))}
+                      <div className="space-y-2 mb-4">
+                        {bull.highlights.map((highlight, index) => (
+                          <div key={index} className="flex items-center space-x-2 text-sm">
+                            <ChevronRight className="w-4 h-4 text-sky-600 flex-shrink-0" />
+                            <span className="text-gray-700">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <button className="w-full bg-gradient-to-r from-sky-600 to-blue-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center space-x-2">
+                        <span>Ver Detalles Completos</span>
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
                     </div>
-
-                    <button className="w-full bg-gradient-to-r from-sky-600 to-blue-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center space-x-2">
-                      <span>Ver Detalles Completos</span>
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
+                  </div>
+                ))
+              ) : (
+                <div className="col-span-full">
+                  <div className="bg-white rounded-2xl shadow-lg p-12 text-center border border-gray-100">
+                    <div className="w-24 h-24 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Sparkles className="w-12 h-12 text-sky-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Próximamente</h3>
+                    <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                      Estamos preparando nuestra selección de toros GYR elite. Pronto tendrás acceso a genética GYR de la más alta calidad.
+                    </p>
+                    <a
+                      href="https://wa.me/573001234567"
+                      className="inline-flex items-center justify-center bg-gradient-to-r from-sky-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all space-x-2"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      <span>Contactar para más información</span>
+                    </a>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
