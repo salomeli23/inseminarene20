@@ -1993,7 +1993,7 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
     const jerseyIds = ["jx-peak-shoutout-et", "jx-peak-palacemalice-et", "pvf-zon-et", "jx-vierra-hendrix-et"]
     const pardoSuizoIds = ["patron", "poe", "fresno", "skyfox"]
     const ayrshireIds = ["debrief", "gabert"]
-    const gyrIds = ["edank", "trovao-2b", "beneton-fiv-2b", "elvis-da-estancia-k", "uno-2b"]
+    const gyrIds = ["edank"]
 
     if (holsteinIds.includes(bullId)) return "Holstein"
     if (jerseyIds.includes(bullId)) return "Jersey"
