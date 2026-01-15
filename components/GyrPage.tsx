@@ -145,7 +145,7 @@ function GyrPage({ onBack }: GyrPageProps) {
               </p>
             </div>
 
-            <div className="max-w-md mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredBulls.length > 0 ? (
                 featuredBulls.map((bull) => (
                   <div
@@ -153,39 +153,39 @@ function GyrPage({ onBack }: GyrPageProps) {
                     className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group cursor-pointer border border-gray-100"
                     onClick={() => setSelectedBull(bull.id)}
                   >
-                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-sky-100 to-blue-100">
+                    <div className="relative h-56 overflow-hidden bg-gradient-to-br from-sky-100 to-blue-100">
                       <img
                         src={bull.imageUrl}
                         alt={bull.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute top-4 right-4">
-                        <div className="bg-sky-600 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
-                          <Star className="w-4 h-4" />
+                      <div className="absolute top-3 right-3">
+                        <div className="bg-sky-600 text-white px-2 py-1 rounded-full text-xs font-semibold flex items-center space-x-1">
+                          <Star className="w-3 h-3" />
                           <span>Premium</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-sky-600 transition-colors">
+                    <div className="p-5">
+                      <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-sky-600 transition-colors">
                         {bull.name}
                       </h3>
-                      <p className="text-sm text-gray-500 mb-3 font-mono">{bull.registration}</p>
-                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">{bull.summary}</p>
+                      <p className="text-xs text-gray-500 mb-2 font-mono">{bull.registration}</p>
+                      <p className="text-gray-600 text-sm mb-3 leading-relaxed line-clamp-2">{bull.summary}</p>
 
-                      <div className="space-y-2 mb-4">
-                        {bull.highlights.map((highlight, index) => (
-                          <div key={index} className="flex items-center space-x-2 text-sm">
-                            <ChevronRight className="w-4 h-4 text-sky-600 flex-shrink-0" />
+                      <div className="space-y-1 mb-4">
+                        {bull.highlights.slice(0, 3).map((highlight, index) => (
+                          <div key={index} className="flex items-center space-x-1 text-xs">
+                            <ChevronRight className="w-3 h-3 text-sky-600 flex-shrink-0" />
                             <span className="text-gray-700">{highlight}</span>
                           </div>
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-sky-600 to-blue-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center space-x-2">
-                        <span>Ver Detalles Completos</span>
-                        <ChevronRight className="w-5 h-5" />
+                      <button className="w-full bg-gradient-to-r from-sky-600 to-blue-600 text-white py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center space-x-2 text-sm">
+                        <span>Ver Detalles</span>
+                        <ChevronRight className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
