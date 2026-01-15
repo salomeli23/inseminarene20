@@ -258,7 +258,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     betaCaseina: "A2A2",
     kappaCaseina: "--",
     betaLacto: "--",
-    imageUrl: "/KROVIS_PROFILE.jpg",
+    imageUrl: "/JUPITER_PROFILE.jpg",
     hasGenChoice: false,
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
@@ -278,7 +278,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     betaCaseina: "A1A2",
     kappaCaseina: "AA",
     betaLacto: "AA",
-    imageUrl: "/GYR_JUMBO_ESSENCIA.jpg",
+    imageUrl: "/GABEIRA_PROFILE.jpg",
     hasGenChoice: true,
     hasToro2A2: false,
     pnmglData: [
