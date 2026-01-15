@@ -70,6 +70,21 @@ export const gyrBullsData: Record<string, GyrBullData> = {
       { trait: "Sólidos Totais %", pta: "--", conf: "--" },
     ],
     abczData: standardAbczTraits,
+    pedigree: {
+      title: "JAGUAR x C.A.SANSÃO",
+      sire: {
+        name: "JAGUAR TE DO GAVIÃO",
+        registro: "GAV 291",
+        siresSire: "S.C.UACAI JAGUAR",
+        siresDam: "UMIDADE",
+      },
+      dam: {
+        name: "TULIPA FIV 2B",
+        registro: "ZAB 981",
+        damsSire: "C.A.SANSÃO",
+        damsDam: "INCISÃO FIV DE BRAS.",
+      },
+    },
   },
   trovao: {
     id: "trovao",
