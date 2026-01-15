@@ -237,6 +237,21 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigree: {
+      title: "GENGIS KHAN DE BRAS x JAGUAR TE DO GAVIAO",
+      sire: {
+        name: "GENGIS KHAN DE BRAS",
+        registro: "RRP 6097",
+        siresSire: "C.A.SANSAO",
+        siresDam: "SETIBA DE BRAS",
+      },
+      dam: {
+        name: "AMPOLA FIV JABAQUARA",
+        registro: "EVPF 96",
+        damsSire: "JAGUAR TE DO GAVIAO",
+        damsDam: "ESFERA TE DE BRAS",
+      },
+    },
   },
   gatilho: {
     id: "gatilho",
