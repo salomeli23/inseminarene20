@@ -171,6 +171,21 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigree: {
+      title: "TABU TE CAL x JAGUAR TE DO GAVIAO",
+      sire: {
+        name: "TABU TE CAL",
+        registro: "CAL 6557",
+        siresSire: "RADAR DOS POCOES",
+        siresDam: "JULIANA CAL",
+      },
+      dam: {
+        name: "HIRANA FIV DE BRAS.",
+        registro: "RRP 6393",
+        damsSire: "JAGUAR TE DO GAVIAO",
+        damsDam: "ORDENHA TE DE BRAS",
+      },
+    },
   },
   uno: {
     id: "uno",
