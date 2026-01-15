@@ -2082,49 +2082,52 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left Column - Conformation, Calving Traits, Sire Fertility */}
           <div>
-            <div className="bg-gray-50 rounded-lg p-6 mb-6">
-              <h2 className="text-xl font-bold mb-4">CONFORMACIÓN</h2>
-              <p className="text-sm text-gray-600 mb-4">
-                Basado en <strong>Hijas en ~hatos (81% Conf)</strong>
-              </p>
+            {/* Conformación - Ocultar para EDANK */}
+            {bullId !== "edank" && bull.conformation && (
+              <div className="bg-gray-50 rounded-lg p-6 mb-6">
+                <h2 className="text-xl font-bold mb-4">CONFORMACIÓN</h2>
+                <p className="text-sm text-gray-600 mb-4">
+                  Basado en <strong>Hijas en ~hatos (81% Conf)</strong>
+                </p>
 
-              <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-                <div>
-                  <p className="text-sm font-semibold mb-1">Índice Modificado de Ubre</p>
-                  <p className="text-3xl font-bold text-[#00A0B0]">{bull.conformation?.ptat.value}</p>
-                  <p className="text-xs text-gray-600">{bull.conformation?.ptat.reliability} Conf</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold mb-1">PTAT</p>
-                  <p className="text-3xl font-bold">{bull.conformation?.udc.value}</p>
-                  <p className="text-xs text-gray-600">{bull.conformation?.udc.reliability}</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold mb-1">UDC</p>
-                  <p className="text-3xl font-bold">{bull.conformation?.flc.value}</p>
-                  <p className="text-xs text-gray-600">{bull.conformation?.flc.reliability}</p>
-                </div>
-              </div>
-
-              {/* Trait bars */}
-              <div className="space-y-2">
-                {bull.conformation?.traits.map((trait, index) => (
-                  <div key={index} className="grid grid-cols-12 gap-2 items-center text-xs">
-                    <div className="col-span-4 text-right font-medium">{trait.name}</div>
-                    <div className="col-span-5 relative h-4 bg-gray-200 rounded">
-                      <div
-                        className="absolute top-0 left-0 h-full bg-[#00A0B0] rounded"
-                        style={{
-                          width: `${Math.min(100, (Number.parseFloat(trait.value) + 3) * 16.67)}%`,
-                        }}
-                      ></div>
-                    </div>
-                    <div className="col-span-1 text-center font-bold">{trait.value}</div>
-                    <div className="col-span-2 text-gray-600">{trait.interpretation}</div>
+                <div className="grid grid-cols-3 gap-4 mb-6 text-center">
+                  <div>
+                    <p className="text-sm font-semibold mb-1">Índice Modificado de Ubre</p>
+                    <p className="text-3xl font-bold text-[#00A0B0]">{bull.conformation?.ptat.value}</p>
+                    <p className="text-xs text-gray-600">{bull.conformation?.ptat.reliability} Conf</p>
                   </div>
-                ))}
+                  <div>
+                    <p className="text-sm font-semibold mb-1">PTAT</p>
+                    <p className="text-3xl font-bold">{bull.conformation?.udc.value}</p>
+                    <p className="text-xs text-gray-600">{bull.conformation?.udc.reliability}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold mb-1">UDC</p>
+                    <p className="text-3xl font-bold">{bull.conformation?.flc.value}</p>
+                    <p className="text-xs text-gray-600">{bull.conformation?.flc.reliability}</p>
+                  </div>
+                </div>
+
+                {/* Trait bars */}
+                <div className="space-y-2">
+                  {bull.conformation?.traits.map((trait, index) => (
+                    <div key={index} className="grid grid-cols-12 gap-2 items-center text-xs">
+                      <div className="col-span-4 text-right font-medium">{trait.name}</div>
+                      <div className="col-span-5 relative h-4 bg-gray-200 rounded">
+                        <div
+                          className="absolute top-0 left-0 h-full bg-[#00A0B0] rounded"
+                          style={{
+                            width: `${Math.min(100, (Number.parseFloat(trait.value) + 3) * 16.67)}%`,
+                          }}
+                        ></div>
+                      </div>
+                      <div className="col-span-1 text-center font-bold">{trait.value}</div>
+                      <div className="col-span-2 text-gray-600">{trait.interpretation}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Calving Traits */}
             <div className="bg-gray-50 rounded-lg p-6 mb-6">
