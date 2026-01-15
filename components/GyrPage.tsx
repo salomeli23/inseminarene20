@@ -54,7 +54,7 @@ function GyrPage({ onBack }: GyrPageProps) {
       id: "elvis",
       name: "ELVIS",
       registration: "BRAN327",
-      imageUrl: "/KROVIS_PROFILE.jpg",
+      imageUrl: "/ELVIS_PROFILE.jpg",
       summary: "Toro GYR de la Estancia K con excelente lactación materna",
       highlights: ["En Test: 2030", "A2A2 AA AB", "Producción: 10,401 Kg"],
     },
