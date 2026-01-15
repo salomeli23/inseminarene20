@@ -126,7 +126,7 @@ function GyrPage({ onBack }: GyrPageProps) {
       id: "tesouro",
       name: "TESOURO 2B",
       registration: "ZAB1081",
-      imageUrl: "/GYR_TESOURO_2B.jpg",
+      imageUrl: "/TESOURO_PROFILE.jpg",
       summary: "Toro GYR probado con PTA Leite +427 y genética A2A2",
       highlights: ["PTA Leite: +427", "A2A2 AA BB", "Producción: 6,513 Kg"],
     },
