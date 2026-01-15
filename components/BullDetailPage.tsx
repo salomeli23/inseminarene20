@@ -2129,30 +2129,33 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
               </div>
             )}
 
-            {/* Calving Traits */}
-            <div className="bg-gray-50 rounded-lg p-6 mb-6">
-              <h2 className="text-xl font-bold mb-4">CARACTERÍSTICAS DE PARTO</h2>
-              <div className="space-y-2 text-sm">
-                {bull.calvingTraits?.map((trait, index) => (
-                  <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-2">
-                    <span className="font-semibold">{trait.name}</span>
-                    <div className="text-right">
-                      <span className="font-bold text-[#00A0B0]">{trait.value}</span>
-                      <span className="text-xs text-gray-600 ml-2">{trait.reliability}</span>
-                      <span className="text-xs text-gray-600 ml-2">{trait.observed}</span>
+            {/* Calving Traits - Ocultar para EDANK */}
+            {bullId !== "edank" && (
+              <div className="bg-gray-50 rounded-lg p-6 mb-6">
+                <h2 className="text-xl font-bold mb-4">CARACTERÍSTICAS DE PARTO</h2>
+                <div className="space-y-2 text-sm">
+                  {bull.calvingTraits?.map((trait, index) => (
+                    <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-2">
+                      <span className="font-semibold">{trait.name}</span>
+                      <div className="text-right">
+                        <span className="font-bold text-[#00A0B0]">{trait.value}</span>
+                        <span className="text-xs text-gray-600 ml-2">{trait.reliability}</span>
+                        <span className="text-xs text-gray-600 ml-2">{trait.observed}</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Sire Fertility */}
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h2 className="text-xl font-bold mb-4">FERTILIDAD DEL TORO</h2>
-              <div className="space-y-2 text-sm">
-                {bull.sireFertility?.map((trait, index) => (
-                  <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-2">
-                    <span className="font-semibold">{trait.name}</span>
+            {/* Sire Fertility - Ocultar para EDANK */}
+            {bullId !== "edank" && (
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h2 className="text-xl font-bold mb-4">FERTILIDAD DEL TORO</h2>
+                <div className="space-y-2 text-sm">
+                  {bull.sireFertility?.map((trait, index) => (
+                    <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-2">
+                      <span className="font-semibold">{trait.name}</span>
                     <div className="text-right">
                       <span className="font-bold">{trait.value}</span>
                       <span className="text-xs text-gray-600 ml-2">{trait.reliability}</span>
