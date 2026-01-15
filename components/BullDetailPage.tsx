@@ -1945,7 +1945,7 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
       dms: "PNMGL 2025",
       efi: "N/A",
       currentProof: "PNMGL-2025",
-      imageUrl: "/GYR_EDANK.jpg",
+      imageUrl: "/EDANK_PROFILE.jpg",
       origin: "Brasil",
       birthDate: "9 de Agosto, 2013",
       lineage: "Sire: N/A | Dam: N/A",
