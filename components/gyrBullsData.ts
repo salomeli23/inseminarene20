@@ -394,6 +394,21 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigree: {
+      title: "TEATRO X JAGUAR",
+      sire: {
+        name: "TEATRO DA SILVANIA",
+        registro: "EFC 383",
+        siresSire: "ESPANTOSO",
+        siresDam: "EFALC NATA LAGEADO",
+      },
+      dam: {
+        name: "IMAGEM II FIV DE BRAS",
+        registro: "RRP 7960",
+        damsSire: "JAGUAR TE DO GAVIAO",
+        damsDam: "IMAGEM DE BRAS",
+      },
+    },
   },
   tesouro: {
     id: "tesouro",
