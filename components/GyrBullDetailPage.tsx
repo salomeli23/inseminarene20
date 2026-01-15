@@ -40,6 +40,7 @@ export interface GyrBullData {
   hasGenChoice?: boolean
   hasToro2A2?: boolean
   pedigree?: PedigreeData
+  pedigreeImage?: string
 }
 
 interface GyrBullDetailPageProps {
