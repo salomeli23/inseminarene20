@@ -78,7 +78,7 @@ function GyrPage({ onBack }: GyrPageProps) {
       id: "gatilho",
       name: "GATILHO",
       registration: "EVPF577",
-      imageUrl: "/TESOURO_PROFILE.jpg",
+      imageUrl: "/GATILHO_PROFILE.jpg",
       summary: "Toro GYR probado con PTA Leite +648 y lactación materna de 20,018 Kg",
       highlights: ["PTA Leite: +648", "A2A2 AA BB", "Producción: 20,018 Kg"],
     },
