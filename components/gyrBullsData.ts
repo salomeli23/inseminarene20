@@ -328,6 +328,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_jupiter.png",
   },
   gabeira: {
     id: "gabeira",
