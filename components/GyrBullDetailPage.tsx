@@ -222,6 +222,17 @@ export default function GyrBullDetailPage({ bull, onBack }: GyrBullDetailPagePro
                 </table>
               </div>
 
+              {/* Pedigree Image */}
+              {bull.pedigreeImage && (
+                <div className="mb-8">
+                  <img
+                    src={bull.pedigreeImage}
+                    alt={`Pedigrí de ${bull.name}`}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              )}
+
               {/* ABCZ 2025 Table */}
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-4">ABCZ 2025</h3>
