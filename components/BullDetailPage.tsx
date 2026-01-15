@@ -2229,7 +2229,7 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
             className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors group mb-4"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium">Volver a Holstein</span>
+            <span className="font-medium">Volver a {categoryName}</span>
           </button>
           <img src="/logoinseminar.png" alt="Inseminar" className="h-16 object-contain" />
         </div>
