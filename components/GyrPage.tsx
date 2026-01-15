@@ -30,7 +30,7 @@ function GyrPage({ onBack }: GyrPageProps) {
       id: "edank",
       name: "EDANK",
       registration: "EVPE444",
-      imageUrl: "/GYR_EDANK.jpg",
+      imageUrl: "/EDANK_PROFILE.jpg",
       summary: "Toro GYR con PTA Leite +888 (87% conf) y producción materna de 20,018 Kg",
       highlights: ["PTA Leite: +888", "A1A2 BB AB", "Producción: 20,018 Kg"],
     },
