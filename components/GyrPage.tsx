@@ -74,6 +74,46 @@ function GyrPage({ onBack }: GyrPageProps) {
       summary: "Toro GYR joven con excepcional lactación materna de 13,068 Kg",
       highlights: ["En Test: 2030", "A2A2 AA AB", "Producción: 13,068 Kg"],
     },
+    {
+      id: "gatilho",
+      name: "GATILHO",
+      registration: "EVPF577",
+      imageUrl: "/GYR_TESOURO_2B.jpg",
+      summary: "Toro GYR probado con PTA Leite +648 y lactación materna de 20,018 Kg",
+      highlights: ["PTA Leite: +648", "A2A2 AA BB", "Producción: 20,018 Kg"],
+    },
+    {
+      id: "nolan",
+      name: "NOLAN",
+      registration: "TOLA785",
+      imageUrl: "/GYR_BENETON.jpg",
+      summary: "Toro GYR joven en test de progenie con excelente genética A2A2",
+      highlights: ["En Test: 2029", "A2A2 AA AB", "Producción: 10,297 Kg"],
+    },
+    {
+      id: "jupiter",
+      name: "JUPITER",
+      registration: "AROY777",
+      imageUrl: "/GYR_KROVIS_TOL.jpg",
+      summary: "Toro GYR de Aroeyra con lactación materna de 12,172 Kg",
+      highlights: ["En Test", "A2A2", "Producción: 12,172 Kg"],
+    },
+    {
+      id: "gabeira",
+      name: "GABEIRA",
+      registration: "LUF182",
+      imageUrl: "/GYR_JUMBO_ESSENCIA.jpg",
+      summary: "Toro GYR probado con PTA Leite +349 y genética A1A2",
+      highlights: ["PTA Leite: +349", "A1A2 AA AA", "Producción: 10,976 Kg"],
+    },
+    {
+      id: "krovis",
+      name: "KROVIS",
+      registration: "TOLA626",
+      imageUrl: "/GYR_KROVIS_TOL.jpg",
+      summary: "Toro GYR en test de progenie con lactación materna de 13,068 Kg",
+      highlights: ["En Test: 2026", "A2A2 AA BB", "Producción: 13,068 Kg"],
+    },
   ]
 
   if (selectedBull && gyrBullsData[selectedBull]) {
