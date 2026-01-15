@@ -136,6 +136,21 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigree: {
+      title: "PICASSO X SUPRA-SUMO",
+      sire: {
+        name: "PICASSO FIV 2B",
+        registro: "ZAB 542",
+        siresSire: "JAGUAR TE DO GAVIÃO",
+        siresDam: "DINA RADAR TE CAL",
+      },
+      dam: {
+        name: "INCISÃO FIV DE BRAS.",
+        registro: "RRP 6711",
+        damsSire: "SUPRA-SUMO DE BRAS.",
+        damsDam: "BOSSA NOVA TE BRAS.",
+      },
+    },
   },
   elvis: {
     id: "elvis",
