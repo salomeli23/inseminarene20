@@ -70,7 +70,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
       { trait: "Sólidos Totais %", pta: "--", conf: "--" },
     ],
     abczData: standardAbczTraits,
-    pedigreeImage: "/pedigree_amarok.png",
+    pedigreeImage: "/pedigree_edank.png",
     pedigree: {
       title: "JAGUAR x C.A.SANSÃO",
       sire: {
