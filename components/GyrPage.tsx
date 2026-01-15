@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { ArrowLeft, Award, TrendingUp, Heart, Sparkles, ChevronRight, Star, MessageCircle } from "lucide-react"
-import BullDetailPage from "./BullDetailPage"
-import EdankDetailPage from "./EdankDetailPage"
+import GyrBullDetailPage from "./GyrBullDetailPage"
+import { gyrBullsData } from "./gyrBullsData"
 
 interface FeaturedBull {
   id: string
@@ -29,19 +29,55 @@ function GyrPage({ onBack }: GyrPageProps) {
     {
       id: "edank",
       name: "EDANK",
-      registration: "EVPE444",
+      registration: "EVPF444",
       imageUrl: "/EDANK_PROFILE.jpg",
       summary: "Toro GYR con PTA Leite +888 (87% conf) y producción materna de 20,018 Kg",
       highlights: ["PTA Leite: +888", "A1A2 BB AB", "Producción: 20,018 Kg"],
     },
+    {
+      id: "trovao",
+      name: "TROVÃO 2B",
+      registration: "ZAB1044",
+      imageUrl: "/GYR_TROVAO.jpg",
+      summary: "Toro GYR probado con PTA Leite +721 y excelente producción materna",
+      highlights: ["PTA Leite: +721", "A2A2 AA AB", "Producción: 11,764 Kg"],
+    },
+    {
+      id: "beneton",
+      name: "BENETON",
+      registration: "ZAB 1762",
+      imageUrl: "/GYR_BENETON.jpg",
+      summary: "Toro GYR joven en test de progenie con genética A2A2",
+      highlights: ["En Test: 2027", "A2A2 AA BB", "Producción: 10,409 Kg"],
+    },
+    {
+      id: "elvis",
+      name: "ELVIS",
+      registration: "BRAN327",
+      imageUrl: "/GYR_ELVIS.jpg",
+      summary: "Toro GYR de la Estancia K con excelente lactación materna",
+      highlights: ["En Test: 2030", "A2A2 AA AB", "Producción: 10,401 Kg"],
+    },
+    {
+      id: "uno",
+      name: "UNO 2B",
+      registration: "ZAB1140",
+      imageUrl: "/GYR_UNO.jpg",
+      summary: "Toro GYR probado con PTA Leite +857 y alto rendimiento",
+      highlights: ["PTA Leite: +857", "A2A2 AA AA", "Producción: 9,355 Kg"],
+    },
+    {
+      id: "eden",
+      name: "ÉDEN",
+      registration: "ZAB2466",
+      imageUrl: "/GYR_EDEN.jpg",
+      summary: "Toro GYR joven con excepcional lactación materna de 13,068 Kg",
+      highlights: ["En Test: 2030", "A2A2 AA AB", "Producción: 13,068 Kg"],
+    },
   ]
 
-  if (selectedBull) {
-    // Use custom EdankDetailPage for EDANK
-    if (selectedBull === 'edank') {
-      return <EdankDetailPage onBack={() => setSelectedBull(null)} />
-    }
-    return <BullDetailPage bullId={selectedBull} onBack={() => setSelectedBull(null)} />
+  if (selectedBull && gyrBullsData[selectedBull]) {
+    return <GyrBullDetailPage bull={gyrBullsData[selectedBull]} onBack={() => setSelectedBull(null)} />
   }
 
   return (
