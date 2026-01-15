@@ -114,6 +114,30 @@ function GyrPage({ onBack }: GyrPageProps) {
       summary: "Toro GYR en test de progenie con lactación materna de 13,068 Kg",
       highlights: ["En Test: 2026", "A2A2 AA BB", "Producción: 13,068 Kg"],
     },
+    {
+      id: "amarok",
+      name: "AMAROK",
+      registration: "ZAB 1644",
+      imageUrl: "/GYR_AMAROK_FIV_2B.jpg",
+      summary: "Toro GYR en test de progenie con lactación materna de 10,444 Kg",
+      highlights: ["En Test: 2027", "A2A2 AA AB", "Producción: 10,444 Kg"],
+    },
+    {
+      id: "tesouro",
+      name: "TESOURO 2B",
+      registration: "ZAB1081",
+      imageUrl: "/GYR_TESOURO_2B.jpg",
+      summary: "Toro GYR probado con PTA Leite +427 y genética A2A2",
+      highlights: ["PTA Leite: +427", "A2A2 AA BB", "Producción: 6,513 Kg"],
+    },
+    {
+      id: "jumbo",
+      name: "JUMBO",
+      registration: "DGLM28",
+      imageUrl: "/GYR_JUMBO_ESSENCIA.jpg",
+      summary: "Toro GYR probado con PTA Leite +258 y genética A2A2",
+      highlights: ["PTA Leite: +258", "A2A2 AA AB", "Producción: 7,095 Kg"],
+    },
   ]
 
   if (selectedBull && gyrBullsData[selectedBull]) {
