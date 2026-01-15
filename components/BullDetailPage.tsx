@@ -2189,6 +2189,24 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
 
   const bull = bullsData[bullId]
 
+  // Determinar la categoría del toro basándose en su ID
+  const getCategoryName = () => {
+    const holsteinIds = ["peak-moneytalks-et", "aprilday-mariano-red-et"]
+    const jerseyIds = ["jx-peak-shoutout-et", "jx-peak-palacemalice-et", "pvf-zon-et", "jx-vierra-hendrix-et"]
+    const pardoSuizoIds = ["patron", "poe", "fresno", "skyfox"]
+    const ayrshireIds = ["debrief", "gabert"]
+    const gyrIds = ["edank", "trovao-2b", "beneton-fiv-2b", "elvis-da-estancia-k", "uno-2b"]
+
+    if (holsteinIds.includes(bullId)) return "Holstein"
+    if (jerseyIds.includes(bullId)) return "Jersey"
+    if (pardoSuizoIds.includes(bullId)) return "Pardo Suizo"
+    if (ayrshireIds.includes(bullId)) return "Ayrshire"
+    if (gyrIds.includes(bullId)) return "GYR"
+    return "Categorías"
+  }
+
+  const categoryName = getCategoryName()
+
   if (!bull) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
