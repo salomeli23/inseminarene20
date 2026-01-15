@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { ArrowLeft, Award, TrendingUp, Heart, Sparkles, ChevronRight, Star, MessageCircle } from "lucide-react"
 import BullDetailPage from "./BullDetailPage"
+import EdankDetailPage from "./EdankDetailPage"
 
 interface FeaturedBull {
   id: string
