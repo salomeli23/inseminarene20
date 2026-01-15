@@ -174,7 +174,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
-    pedigreeImage: "/pedigree_edank.png",
+    pedigreeImage: "/pedigree_elvis.png",
     pedigree: {
       title: "TABU TE CAL x JAGUAR TE DO GAVIAO",
       sire: {
