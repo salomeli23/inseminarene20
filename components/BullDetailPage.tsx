@@ -2162,41 +2162,43 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
 
           {/* Right Column - ICC, Production, Health, Pedigree */}
           <div className="space-y-6">
-            {/* ICC Score */}
-            <div className="bg-[#00A0B0] text-white rounded-lg p-6">
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-sm font-semibold">ICC®</div>
-                <div className="text-5xl font-bold">{bull.icc?.score}</div>
+            {/* ICC Score - Ocultar para EDANK */}
+            {bullId !== "edank" && (
+              <div className="bg-[#00A0B0] text-white rounded-lg p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-sm font-semibold">ICC®</div>
+                  <div className="text-5xl font-bold">{bull.icc?.score}</div>
+                </div>
+                <div className="grid grid-cols-3 gap-4 text-center mb-4">
+                  <div>
+                    <p className="text-sm mb-1">PREF</p>
+                    <p className="text-2xl font-bold">{bull.icc?.pref.value}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm mb-1">SUST</p>
+                    <p className="text-2xl font-bold">{bull.icc?.pref.sust}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm mb-1">FERT</p>
+                    <p className="text-2xl font-bold">{bull.icc?.pref.fert}</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-4 text-center text-sm border-t border-white/30 pt-4">
+                  <div>
+                    <p className="mb-1">NM$</p>
+                    <p className="font-bold">{bull.icc?.nm.value}</p>
+                  </div>
+                  <div>
+                    <p className="mb-1">CM$</p>
+                    <p className="font-bold">{bull.icc?.nm.cm}</p>
+                  </div>
+                  <div>
+                    <p className="mb-1">TPI®</p>
+                    <p className="font-bold">{bull.icc?.nm.tpi}</p>
+                  </div>
+                </div>
               </div>
-              <div className="grid grid-cols-3 gap-4 text-center mb-4">
-                <div>
-                  <p className="text-sm mb-1">PREF</p>
-                  <p className="text-2xl font-bold">{bull.icc?.pref.value}</p>
-                </div>
-                <div>
-                  <p className="text-sm mb-1">SUST</p>
-                  <p className="text-2xl font-bold">{bull.icc?.pref.sust}</p>
-                </div>
-                <div>
-                  <p className="text-sm mb-1">FERT</p>
-                  <p className="text-2xl font-bold">{bull.icc?.pref.fert}</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-3 gap-4 text-center text-sm border-t border-white/30 pt-4">
-                <div>
-                  <p className="mb-1">NM$</p>
-                  <p className="font-bold">{bull.icc?.nm.value}</p>
-                </div>
-                <div>
-                  <p className="mb-1">CM$</p>
-                  <p className="font-bold">{bull.icc?.nm.cm}</p>
-                </div>
-                <div>
-                  <p className="mb-1">TPI®</p>
-                  <p className="font-bold">{bull.icc?.nm.tpi}</p>
-                </div>
-              </div>
-            </div>
+            )}
 
             {/* Production */}
             <div className="bg-gray-50 rounded-lg p-6">
