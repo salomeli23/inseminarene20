@@ -287,10 +287,8 @@ export const gyrBullsData: Record<string, GyrBullData> = {
       { trait: "Sólidos Totais %", pta: "--", conf: "--" },
     ],
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_gatilho.png",
   },
-  nolan: {
-    id: "nolan",
-    code: "001GL00076",
     name: "NOLAN",
     fullName: "NOLAN TOL",
     registro: "TOLA785",
