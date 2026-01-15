@@ -29,9 +29,9 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const heroImages = [
-    "/hero-guernsey.jpg",
-    "/hero-gyr.jpg",
-    "/hero-holstein.jpg"
+    "/hero-alabama-jbj.jpg",
+    "/hero-trovao.jpg",
+    "/hero-amarok-progenie.jpg"
   ]
 
   useEffect(() => {
