@@ -70,6 +70,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
       { trait: "Sólidos Totais %", pta: "--", conf: "--" },
     ],
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_edank.png",
     pedigree: {
       title: "JAGUAR x C.A.SANSÃO",
       sire: {
@@ -136,6 +137,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_edank.png",
     pedigree: {
       title: "PICASSO X SUPRA-SUMO",
       sire: {
@@ -171,6 +173,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_edank.png",
     pedigree: {
       title: "TABU TE CAL x JAGUAR TE DO GAVIAO",
       sire: {
@@ -237,6 +240,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_edank.png",
     pedigree: {
       title: "GENGIS KHAN DE BRAS x JAGUAR TE DO GAVIAO",
       sire: {
@@ -394,6 +398,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_edank.png",
     pedigree: {
       title: "TEATRO X JAGUAR",
       sire: {
