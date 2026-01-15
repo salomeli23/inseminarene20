@@ -2206,72 +2206,71 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
               </div>
             )}
 
-            {/* Production */}
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h2 className="text-xl font-bold mb-4">PRODUCCIÓN</h2>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">Leche</span>
-                  <div className="text-right">
-                    <span className="font-bold text-lg">{bull.production?.milk.value}</span>
-                    <span className="text-sm text-gray-600 ml-2">{bull.production?.milk.lbs ? "Lbs" : ""}</span>
-                    <span className="text-sm font-semibold text-[#00A0B0] ml-2">{bull.production?.milk.percent}</span>
+            {/* Production - Ocultar para EDANK */}
+            {bullId !== "edank" && (
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h2 className="text-xl font-bold mb-4">PRODUCCIÓN</h2>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">Leche</span>
+                    <div className="text-right">
+                      <span className="font-bold text-lg">{bull.production?.milk.value}</span>
+                      <span className="text-sm text-gray-600 ml-2">{bull.production?.milk.lbs ? "Lbs" : ""}</span>
+                      <span className="text-sm font-semibold text-[#00A0B0] ml-2">{bull.production?.milk.percent}</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">Proteína</span>
+                    <div className="text-right">
+                      <span className="font-bold text-lg">{bull.production?.protein.value}</span>
+                      <span className="text-sm text-gray-600 ml-2">{bull.production?.protein.lbs ? "Lbs" : ""}</span>
+                      <span className="text-sm font-semibold text-[#00A0B0] ml-2">
+                        {bull.production?.protein.percent}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">Grasa</span>
+                    <div className="text-right">
+                      <span className="font-bold text-lg">{bull.production?.fat.value}</span>
+                      <span className="text-sm text-gray-600 ml-2">{bull.production?.fat.lbs ? "Lbs" : ""}</span>
+                      <span className="text-sm font-semibold text-[#00A0B0] ml-2">{bull.production?.fat.percent}</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">Alimento Ahorrado</span>
+                    <div className="text-right">
+                      <span className="font-bold text-lg">{bull.production?.feedSaved.value}</span>
+                      <span className="text-sm font-semibold text-[#00A0B0] ml-2">
+                        {bull.production?.feedSaved.percent}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center border-t pt-2">
+                    <span className="font-semibold">ROOOTA™</span>
+                    <span className="font-bold text-lg">{bull.production?.rooota}</span>
                   </div>
                 </div>
-                {/* Ocultar Proteína, Grasa, Alimento Ahorrado, ROOOTA para EDANK */}
-                {bullId !== "edank" && (
-                  <>
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold">Proteína</span>
-                      <div className="text-right">
-                        <span className="font-bold text-lg">{bull.production?.protein.value}</span>
-                        <span className="text-sm text-gray-600 ml-2">{bull.production?.protein.lbs ? "Lbs" : ""}</span>
-                        <span className="text-sm font-semibold text-[#00A0B0] ml-2">
-                          {bull.production?.protein.percent}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold">Grasa</span>
-                      <div className="text-right">
-                        <span className="font-bold text-lg">{bull.production?.fat.value}</span>
-                        <span className="text-sm text-gray-600 ml-2">{bull.production?.fat.lbs ? "Lbs" : ""}</span>
-                        <span className="text-sm font-semibold text-[#00A0B0] ml-2">{bull.production?.fat.percent}</span>
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold">Alimento Ahorrado</span>
-                      <div className="text-right">
-                        <span className="font-bold text-lg">{bull.production?.feedSaved.value}</span>
-                        <span className="text-sm font-semibold text-[#00A0B0] ml-2">
-                          {bull.production?.feedSaved.percent}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-center border-t pt-2">
-                      <span className="font-semibold">ROOOTA™</span>
-                      <span className="font-bold text-lg">{bull.production?.rooota}</span>
-                    </div>
-                  </>
-                )}
               </div>
-            </div>
+            )}
 
-            {/* Health Traits */}
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h2 className="text-xl font-bold mb-4">CARACTERÍSTICAS DE SALUD</h2>
-              <div className="space-y-2 text-sm">
-                {bull.healthTraits?.map((trait, index) => (
-                  <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-2">
-                    <span className="font-semibold w-1/2">{trait.name}</span>
-                    <div className="w-1/2 text-right">
-                      <span className="font-bold text-[#00A0B0]">{trait.value}</span>
-                      <p className="text-xs text-gray-600">{trait.interpretation}</p>
+            {/* Health Traits - Ocultar para EDANK */}
+            {bullId !== "edank" && (
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h2 className="text-xl font-bold mb-4">CARACTERÍSTICAS DE SALUD</h2>
+                <div className="space-y-2 text-sm">
+                  {bull.healthTraits?.map((trait, index) => (
+                    <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-2">
+                      <span className="font-semibold w-1/2">{trait.name}</span>
+                      <div className="w-1/2 text-right">
+                        <span className="font-bold text-[#00A0B0]">{trait.value}</span>
+                        <p className="text-xs text-gray-600">{trait.interpretation}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Pedigree - Ocultar para EDANK */}
             {bullId !== "edank" && (
