@@ -360,6 +360,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
       { trait: "Sólidos Totais %", pta: "-0,01", conf: "50" },
     ],
     abczData: standardAbczTraits,
+    pedigreeImage: "/pedigree_gabeira.png",
   },
   krovis: {
     id: "krovis",
