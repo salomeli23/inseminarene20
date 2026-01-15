@@ -211,21 +211,28 @@ export default function Home() {
 
               <div className="flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-2xl h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
-                  {heroImages.map((image, index) => (
-                    <div
-                      key={index}
-                      className={`absolute inset-0 transition-opacity duration-1000 ${
-                        index === currentSlide ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      <img
-                        src={image}
-                        alt={`Ganado lechero cebuino ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent"></div>
-                    </div>
-                  ))}
+                  {heroImages.map((image, index) => {
+                    const altTexts = [
+                      "Vaca Guernsey - Raza lechera de alta calidad",
+                      "Toro GYR - Genética cebuina tropical",
+                      "Vaca Holstein - Raza lechera de excelencia"
+                    ]
+                    return (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-1000 ${
+                          index === currentSlide ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={altTexts[index]}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent"></div>
+                      </div>
+                    )
+                  })}
                   
                   {/* Indicadores del slider */}
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
