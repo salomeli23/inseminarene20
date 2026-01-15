@@ -398,7 +398,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
-    pedigreeImage: "/pedigree_amarok.png",
+    pedigreeImage: "/pedigree_elvis.png",
     pedigree: {
       title: "TEATRO X JAGUAR",
       sire: {
