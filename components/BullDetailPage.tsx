@@ -2212,37 +2212,42 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
                     <span className="text-sm font-semibold text-[#00A0B0] ml-2">{bull.production?.milk.percent}</span>
                   </div>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">Proteína</span>
-                  <div className="text-right">
-                    <span className="font-bold text-lg">{bull.production?.protein.value}</span>
-                    <span className="text-sm text-gray-600 ml-2">{bull.production?.protein.lbs ? "Lbs" : ""}</span>
-                    <span className="text-sm font-semibold text-[#00A0B0] ml-2">
-                      {bull.production?.protein.percent}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">Grasa</span>
-                  <div className="text-right">
-                    <span className="font-bold text-lg">{bull.production?.fat.value}</span>
-                    <span className="text-sm text-gray-600 ml-2">{bull.production?.fat.lbs ? "Lbs" : ""}</span>
-                    <span className="text-sm font-semibold text-[#00A0B0] ml-2">{bull.production?.fat.percent}</span>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">Alimento Ahorrado</span>
-                  <div className="text-right">
-                    <span className="font-bold text-lg">{bull.production?.feedSaved.value}</span>
-                    <span className="text-sm font-semibold text-[#00A0B0] ml-2">
-                      {bull.production?.feedSaved.percent}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center border-t pt-2">
-                  <span className="font-semibold">ROOOTA™</span>
-                  <span className="font-bold text-lg">{bull.production?.rooota}</span>
-                </div>
+                {/* Ocultar Proteína, Grasa, Alimento Ahorrado, ROOOTA para EDANK */}
+                {bullId !== "edank" && (
+                  <>
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold">Proteína</span>
+                      <div className="text-right">
+                        <span className="font-bold text-lg">{bull.production?.protein.value}</span>
+                        <span className="text-sm text-gray-600 ml-2">{bull.production?.protein.lbs ? "Lbs" : ""}</span>
+                        <span className="text-sm font-semibold text-[#00A0B0] ml-2">
+                          {bull.production?.protein.percent}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold">Grasa</span>
+                      <div className="text-right">
+                        <span className="font-bold text-lg">{bull.production?.fat.value}</span>
+                        <span className="text-sm text-gray-600 ml-2">{bull.production?.fat.lbs ? "Lbs" : ""}</span>
+                        <span className="text-sm font-semibold text-[#00A0B0] ml-2">{bull.production?.fat.percent}</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold">Alimento Ahorrado</span>
+                      <div className="text-right">
+                        <span className="font-bold text-lg">{bull.production?.feedSaved.value}</span>
+                        <span className="text-sm font-semibold text-[#00A0B0] ml-2">
+                          {bull.production?.feedSaved.percent}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center border-t pt-2">
+                      <span className="font-semibold">ROOOTA™</span>
+                      <span className="font-bold text-lg">{bull.production?.rooota}</span>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
