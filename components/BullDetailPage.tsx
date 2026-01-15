@@ -2163,7 +2163,7 @@ function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
                   </div>
                 ))}
               </div>
-            </div>
+            )}
           </div>
 
           {/* Right Column - ICC, Production, Health, Pedigree */}
