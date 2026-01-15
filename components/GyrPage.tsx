@@ -33,38 +33,6 @@ function GyrPage({ onBack }: GyrPageProps) {
       summary: "Toro GYR con PTA Leite +888 (87% conf) y producción materna de 20,018 Kg",
       highlights: ["PTA Leite: +888", "A1A2 BB AB", "Producción: 20,018 Kg"],
     },
-    {
-      id: "trovao-2b",
-      name: "TROVÃO 2B",
-      registration: "ZAB1044",
-      imageUrl: "/GYR_TROVAO_2B.jpg",
-      summary: "GYR probado con PTA Leite +721 y excelentes sólidos (+35 Kg)",
-      highlights: ["PTA Leite: +721", "A2A2 AB AA", "Sólidos: +35 Kg"],
-    },
-    {
-      id: "beneton-fiv-2b",
-      name: "BENETON FIV 2B",
-      registration: "ZAB1762",
-      imageUrl: "/GYR_BENETON_FIV_2B.jpg",
-      summary: "Toro joven GYR en prueba de progenie 2027 con genética A2A2",
-      highlights: ["Prueba progenie 2027", "A2A2 BB AA", "Producción: 10,409 Kg"],
-    },
-    {
-      id: "elvis-da-estancia-k",
-      name: "ELVIS DA ESTANCIA K",
-      registration: "BRAN327",
-      imageUrl: "/GYR_ELVIS_DA_ESTANCIA_K.jpg",
-      summary: "GYR joven con genética A2A2 y alta producción materna",
-      highlights: ["A2A2 AB AA", "Producción: 10,401 Kg", "Genética superior"],
-    },
-    {
-      id: "uno-2b",
-      name: "UNO 2B",
-      registration: "ZAB1140",
-      imageUrl: "/GYR_UNO_2B.jpg",
-      summary: "Toro GYR con PTA Leite +857 y excelente producción de sólidos",
-      highlights: ["PTA Leite: +857", "A2A2 AA AA", "Sólidos: +48 Kg"],
-    },
   ]
 
   if (selectedBull) {
