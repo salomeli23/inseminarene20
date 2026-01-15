@@ -24,48 +24,7 @@ function GyrPage({ onBack }: GyrPageProps) {
     window.scrollTo(0, 0)
   }, [])
 
-  const featuredBulls: FeaturedBull[] = [
-    {
-      id: "krovis-tol",
-      name: "KROVIS TOL",
-      registration: "TOLA626",
-      imageUrl: "/GYR_KROVIS_TOL.jpg",
-      summary: "Toro GYR joven en prueba de progenie con genética superior A2A2 BB AA",
-      highlights: ["A2A2 BB AA", "Prueba progenie 2026", "Producción: 13,068 Kg"],
-    },
-    {
-      id: "amarok-fiv-2b",
-      name: "AMAROK FIV 2B",
-      registration: "ZAB1644",
-      imageUrl: "/GYR_AMAROK_FIV_2B.jpg",
-      summary: "GYR con genética A2A2 de alta calidad en prueba de progenie",
-      highlights: ["A2A2 AB AA", "Prueba progenie 2027", "Producción: 10,444 Kg"],
-    },
-    {
-      id: "tesouro-2b",
-      name: "TESOURO 2B",
-      registration: "ZAB1081",
-      imageUrl: "/GYR_TESOURO_2B.jpg",
-      summary: "Toro GYR probado con PTA Leite +427 y excelente producción",
-      highlights: ["PTA Leite: +427", "A2A2 BB AA", "Gordura: +21 Kg"],
-    },
-    {
-      id: "jumbo-essencia",
-      name: "JUMBO ESSENCIA",
-      registration: "DGLM28",
-      imageUrl: "/GYR_JUMBO_ESSENCIA.jpg",
-      summary: "GYR con PTA Leite +258 y genética A2A2 confirmada",
-      highlights: ["PTA Leite: +258", "A2A2 AB AA", "NF: +11"],
-    },
-    {
-      id: "beneton",
-      name: "BENETON",
-      registration: "001GL00069",
-      imageUrl: "/GYR_BENETON.jpg",
-      summary: "Toro GYR joven con alta producción materna y genética A2A2",
-      highlights: ["A2A2 BB AA", "Producción: 10,409 Kg", "Genética superior"],
-    },
-  ]
+  const featuredBulls: FeaturedBull[] = []
 
   if (selectedBull) {
     return <BullDetailPage bullId={selectedBull} onBack={() => setSelectedBull(null)} />
