@@ -37,6 +37,10 @@ function GyrPage({ onBack }: GyrPageProps) {
   ]
 
   if (selectedBull) {
+    // Use custom EdankDetailPage for EDANK
+    if (selectedBull === 'edank') {
+      return <EdankDetailPage onBack={() => setSelectedBull(null)} />
+    }
     return <BullDetailPage bullId={selectedBull} onBack={() => setSelectedBull(null)} />
   }
 
