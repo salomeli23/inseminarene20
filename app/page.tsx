@@ -213,9 +213,9 @@ export default function Home() {
                 <div className="relative w-full max-w-2xl h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
                   {heroImages.map((image, index) => {
                     const altTexts = [
-                      "Vaca Guernsey - Raza lechera de alta calidad",
-                      "Toro GYR - Genética cebuina tropical",
-                      "Vaca Holstein - Raza lechera de excelencia"
+                      "Toro ALABAMA JBJ - Genética bovina de excelencia",
+                      "Toro TROVÃO - Genética superior",
+                      "Progenie AMAROK 2B - Genética GYR comprobada"
                     ]
                     return (
                       <div
