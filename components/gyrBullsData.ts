@@ -102,6 +102,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     kappaCaseina: "AA",
     betaLacto: "AB",
     imageUrl: "/TROVAO_PROFILE.jpg",
+    thumbnails: ["/TROVAO_PROFILE.jpg", "/TROVAO_PEDIGREE.png"],
     hasGenChoice: true,
     hasToro2A2: true,
     pnmglData: [
