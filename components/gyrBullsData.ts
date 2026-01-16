@@ -437,6 +437,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     kappaCaseina: "AA",
     betaLacto: "BB",
     imageUrl: "/TESOURO_PROFILE.jpg",
+    thumbnails: ["/TESOURO_PROFILE.jpg", "/TESOURO_PEDIGREE.png"],
     hasGenChoice: false,
     hasToro2A2: true,
     pnmglData: [
@@ -452,7 +453,6 @@ export const gyrBullsData: Record<string, GyrBullData> = {
       { trait: "Sólidos Totais %", pta: "0,15", conf: "61" },
     ],
     abczData: standardAbczTraits,
-    pedigreeImage: "/pedigree_trovao.png",
   },
   jumbo: {
     id: "jumbo",
