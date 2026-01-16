@@ -50,7 +50,8 @@ interface GyrBullDetailPageProps {
 }
 
 export default function GyrBullDetailPage({ bull, onBack }: GyrBullDetailPageProps) {
-  const thumbnails = bull.thumbnails || [bull.imageUrl, bull.imageUrl, bull.imageUrl, bull.imageUrl]
+  const thumbnails = bull.thumbnails || [bull.imageUrl]
+  const [selectedImage, setSelectedImage] = useState(bull.imageUrl)
 
   return (
     <div className="min-h-screen bg-white">
