@@ -306,11 +306,11 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     kappaCaseina: "AA",
     betaLacto: "AB",
     imageUrl: "/NOLAN_PROFILE.jpg",
+    thumbnails: ["/NOLAN_PROFILE.jpg", "/NOLAN_PEDIGREE.png"],
     hasGenChoice: true,
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
     abczData: standardAbczTraits,
-    pedigreeImage: "/pedigree_tesouro.png",
   },
   jupiter: {
     id: "jupiter",
