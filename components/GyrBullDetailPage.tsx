@@ -110,7 +110,7 @@ export default function GyrBullDetailPage({ bull, onBack }: GyrBullDetailPagePro
               {/* Main Image */}
               <div className="mb-4">
                 <img
-                  src={bull.imageUrl}
+                  src={selectedImage}
                   alt={`${bull.name} - Toro GYR`}
                   className="w-full h-auto rounded-lg shadow-md"
                 />
@@ -118,12 +118,15 @@ export default function GyrBullDetailPage({ bull, onBack }: GyrBullDetailPagePro
 
               {/* Thumbnail Gallery */}
               <div className="flex gap-2 mb-6">
-                {thumbnails.slice(0, 6).map((thumb, index) => (
+                {thumbnails.map((thumb, index) => (
                   <img
                     key={index}
                     src={thumb}
                     alt={`${bull.name} vista ${index + 1}`}
-                    className="w-12 h-12 object-cover rounded-lg border-2 border-gray-200 hover:border-[#00A0B0] cursor-pointer transition-colors"
+                    onClick={() => setSelectedImage(thumb)}
+                    className={`w-16 h-16 object-cover rounded-lg border-2 cursor-pointer transition-colors ${
+                      selectedImage === thumb ? 'border-[#00A0B0]' : 'border-gray-200 hover:border-[#00A0B0]'
+                    }`}
                   />
                 ))}
               </div>
