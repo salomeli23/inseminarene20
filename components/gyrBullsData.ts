@@ -238,6 +238,7 @@ export const gyrBullsData: Record<string, GyrBullData> = {
     kappaCaseina: "AA",
     betaLacto: "AB",
     imageUrl: "/EDEN_PROFILE.jpg",
+    thumbnails: ["/EDEN_PROFILE.jpg", "/EDEN_PEDIGREE.png"],
     hasGenChoice: true,
     hasToro2A2: true,
     pnmglData: emptyPnmglData,
