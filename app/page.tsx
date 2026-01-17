@@ -74,7 +74,6 @@ export default function Home() {
         { name: "GIROLANDO 5/8", count: 3 },
         { name: "GIROLANDO 3/4", count: 2 },
         { name: "GUZERA", count: 4 },
-        { name: "RED SINDI", count: 3 },
       ],
     },
     {
@@ -86,7 +85,8 @@ export default function Home() {
       breeds: [
         { name: "ANGUS", count: 6 },
         { name: "BRAHMAN", count: 3 },
-        { name: "NELORE", count: 8 },
+        { name: "NELORE", count: 11 },
+        { name: "RED SINDI", count: 1 },
         { name: "MONTBELIARDE", count: 4 },
         { name: "BRANGUS", count: 4 },
         { name: "CHAROLAIS", count: 1 },
