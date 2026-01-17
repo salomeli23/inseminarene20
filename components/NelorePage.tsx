@@ -98,6 +98,22 @@ function NelorePage({ onBack }: NelorePageProps) {
       summary: "Toro NELORE con PregCheck 102 y MARM TOP 0.5%, excepcional para marmoreio",
       highlights: ["PregCheck: 102", "MARM TOP 0.5%", "P365 TOP 3%"],
     },
+    {
+      id: "alquimista",
+      name: "ALQUIMISTA DA EAO",
+      registration: "EAO A6528",
+      imageUrl: "/ALQUIMISTA_EAO_PHOTO.jpg",
+      summary: "Toro NELORE con PregCheck 100 y excepcional eficiencia alimentar IMS TOP 4%",
+      highlights: ["PregCheck: 100", "IMS TOP 4%", "MARM TOP 2%"],
+    },
+    {
+      id: "astor",
+      name: "ASTOR DA BEABISA",
+      registration: "BRMG 3342",
+      imageUrl: "/ASTOR_BEABISA_PHOTO.jpg",
+      summary: "Toro NELORE con MGTe TOP 5% y PE365 TOP 2%, destacado en precocidad sexual",
+      highlights: ["MGTe TOP 5%", "PE365 TOP 2%", "STAY TOP 6%"],
+    },
   ]
 
   if (selectedBull && neloreBullsData[selectedBull]) {
