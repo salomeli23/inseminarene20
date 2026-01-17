@@ -340,6 +340,8 @@ export default function Home() {
                                 setCurrentPage("ayrshire")
                               } else if (breed.name === "GYR") {
                                 setCurrentPage("gyr")
+                              } else if (breed.name === "GIROLANDO 3/4") {
+                                setCurrentPage("girolando")
                               }
                             }}
                           >
