@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowLeft, Award, TrendingUp, Heart, Sparkles, ChevronRight, Star, MessageCircle } from "lucide-react"
+import { Award, TrendingUp, Heart, Sparkles, ChevronRight, Star, MessageCircle } from "lucide-react"
 import GuzeraBullDetailPage from "./GuzeraBullDetailPage"
 import { guzeraBullsData } from "./guzeraBullsData"
+import Header from "./Header"
 
 interface FeaturedBull {
   id: string

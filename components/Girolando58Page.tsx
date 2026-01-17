@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowLeft, Award, TrendingUp, Heart, Sparkles, ChevronRight, Star, MessageCircle } from "lucide-react"
+import { Award, TrendingUp, Heart, Sparkles, ChevronRight, Star, MessageCircle } from "lucide-react"
 import Girolando58BullDetailPage from "./Girolando58BullDetailPage"
 import { girolando58BullsData } from "./girolando58BullsData"
+import Header from "./Header"
 
 interface FeaturedBull {
   id: string
