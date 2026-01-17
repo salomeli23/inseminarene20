@@ -29,10 +29,10 @@ function GirolandoPage({ onBack }: GirolandoPageProps) {
     {
       id: "nemoday",
       name: "NEMO DAY",
-      registration: "GL-34521",
+      registration: "001G000050",
       imageUrl: "/NEMO_DAY_PROFILE.png",
-      summary: "Toro GIROLANDO 3/4 con excelente genética A2A2 y adaptación tropical",
-      highlights: ["En Test", "A2A2 AB AB", "Producción: 8,500 Kg"],
+      summary: "Toro GIROLANDO 3/4 con excelente genética y adaptación tropical",
+      highlights: ["En Test: 2030", "GenChoice", "GIROLANDO 3/4"],
     },
   ]
 
