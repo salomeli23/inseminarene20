@@ -57,15 +57,10 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
   const thumbnails = bull.thumbnails || [bull.imageUrl]
   const [selectedImage, setSelectedImage] = useState(bull.imageUrl)
 
-  // Helper to check if value is empty
   const hasValue = (val: string) => val && val !== "--" && val !== ""
 
-  // Check if tables have any real data
-  const hasTableData = (data: Array<{ pta: string; conf: string }>) => 
-    data.some(row => row.pta !== "--" || row.conf !== "--")
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-100">
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         <button
@@ -87,7 +82,7 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
               <h1 className="text-2xl font-bold text-gray-900">{bull.name}</h1>
               <p className="text-sm text-gray-500">{bull.code}</p>
             </div>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4">
               <button className="text-gray-400 hover:text-gray-600">
                 <Download className="w-6 h-6" />
               </button>
@@ -97,8 +92,8 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Left Column */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+            {/* Left Column - Image and General Info */}
             <div className="p-6 lg:border-r">
               {/* Buy Button */}
               <a
@@ -113,17 +108,20 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
               </a>
 
               {/* Main Image */}
-              <div className="mb-4">
+              <div className="mb-4 relative">
                 <img
                   src={selectedImage}
                   alt={`${bull.name} - Toro GIROLANDO 3/4`}
                   className="w-full h-auto rounded-lg shadow-md"
                 />
+                <div className="absolute bottom-3 right-3 bg-white/90 px-3 py-1 rounded">
+                  <span className="text-sm font-bold text-gray-800">GENEX</span>
+                </div>
               </div>
 
-              {/* Thumbnail Gallery - only show if multiple images */}
+              {/* Thumbnail Gallery */}
               {thumbnails.length > 1 && (
-                <div className="flex gap-2 mb-6">
+                <div className="flex gap-2 mb-4">
                   {thumbnails.map((thumb, index) => (
                     <img
                       key={index}
@@ -138,74 +136,61 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
                 </div>
               )}
 
-              {/* Logos */}
-              <div className="flex items-center gap-4 mb-6">
-                {bull.hasGenChoice && (
-                  <div className="flex items-center gap-1">
-                    <span className="text-sm text-[#00A0B0] font-bold italic">GenChoice</span>
+              {/* Badges */}
+              <div className="flex items-center gap-3 mb-6">
+                {bull.hasEmTeste && (
+                  <div className="flex items-center gap-1 bg-teal-600 text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                    <span className="w-4 h-4 bg-white text-teal-600 rounded-full flex items-center justify-center text-[10px] font-bold">G</span>
+                    <span>EM TESTE</span>
+                  </div>
+                )}
+                {bull.hasGenomico && (
+                  <div className="bg-yellow-500 text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1">
+                    <span>🧬</span>
+                    <span>GENOMICO</span>
                   </div>
                 )}
                 {bull.hasToro2A2 && (
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full border-2 border-purple-800 flex items-center justify-center bg-purple-800">
-                      <span className="text-[8px] font-bold text-white text-center leading-tight">TORO<br/>A2A2</span>
-                    </div>
+                  <div className="bg-red-600 text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                    A2A2
                   </div>
                 )}
               </div>
 
-              {/* General Information - only show fields with data */}
+              {/* General Information */}
               <div className="border-t pt-4">
-                <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b-2 border-purple-400 italic">
+                <h2 className="text-base font-semibold text-gray-900 mb-4 italic">
                   Informaciones generales
                 </h2>
-                <div className="space-y-3 text-sm">
+                <div className="space-y-2 text-sm">
                   <div>
                     <span className="font-semibold text-gray-700">Nome</span>
                     <p className="text-gray-600">{bull.fullName}</p>
                   </div>
-                  {hasValue(bull.registro) && (
-                    <div>
-                      <span className="font-semibold text-gray-700">Registro</span>
-                      <p className="text-gray-600">{bull.registro}</p>
-                    </div>
-                  )}
-                  {hasValue(bull.nasc) && (
-                    <div>
-                      <span className="font-semibold text-gray-700">Nasc</span>
-                      <p className="text-gray-600">{bull.nasc}</p>
-                    </div>
-                  )}
-                  {hasValue(bull.criador) && (
-                    <div>
-                      <span className="font-semibold text-gray-700">Criador</span>
-                      <p className="text-gray-600">{bull.criador}</p>
-                    </div>
-                  )}
-                  {hasValue(bull.proprietario) && (
-                    <div>
-                      <span className="font-semibold text-gray-700">Proprietário</span>
-                      <p className="text-gray-600">{bull.proprietario}</p>
-                    </div>
-                  )}
-                  {hasValue(bull.lactacaoMae) && (
-                    <div>
-                      <span className="font-semibold text-gray-700">Lactação da Mãe</span>
-                      <p className="text-gray-600">{bull.lactacaoMae}</p>
-                    </div>
-                  )}
-                  {hasValue(bull.ptaLeite) && (
-                    <div>
-                      <span className="font-semibold text-gray-700">PTA Leite</span>
-                      <p className="text-gray-600">{bull.ptaLeite}</p>
-                    </div>
-                  )}
-                  {hasValue(bull.betaCaseina) && (
-                    <div>
-                      <span className="font-semibold text-gray-700">Beta Caseína</span>
-                      <p className="text-gray-600">{bull.betaCaseina}</p>
-                    </div>
-                  )}
+                  <div>
+                    <span className="font-semibold text-gray-700">Registro</span>
+                    <p className="text-gray-600">{bull.registro}</p>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-700">Nasc</span>
+                    <p className="text-gray-600">{bull.nasc}</p>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-700">Criador</span>
+                    <p className="text-gray-600">{bull.criador}</p>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-700">Proprietário</span>
+                    <p className="text-gray-600">{bull.proprietario}</p>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-700">Lactação da Mãe</span>
+                    <p className="text-gray-600">{bull.lactacaoMae}</p>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-700">Beta Caseína</span>
+                    <p className="text-gray-600">{bull.betaCaseina}</p>
+                  </div>
                   {hasValue(bull.kappaCaseina) && (
                     <div>
                       <span className="font-semibold text-gray-700">Kappa Caseína</span>
@@ -218,118 +203,119 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
                       <p className="text-gray-600">{bull.betaLacto}</p>
                     </div>
                   )}
+                  <div>
+                    <span className="font-semibold text-gray-700">PTAL</span>
+                    <p className="text-gray-600">{bull.ptaLeite}</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Pedigree Only (no empty tables) */}
-            <div className="p-6 bg-gray-50">
-              {/* Pedigree Image */}
-              {bull.pedigreeImage && (
-                <div className="mb-8">
-                  <img
-                    src={bull.pedigreeImage}
-                    alt={`Pedigrí de ${bull.name}`}
-                    className="w-full h-auto rounded-lg"
-                  />
+            {/* Middle Column - Evaluaciones */}
+            <div className="p-6 lg:border-r bg-gray-50">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-base font-semibold text-gray-900">Evaluaciones</h3>
+                <select className="border rounded-lg px-3 py-1.5 text-sm bg-white">
+                  <option>SUMÁRIO TOUROS PMGG</option>
+                </select>
+              </div>
+
+              {/* PMGG 2025 Table */}
+              {bull.pmggData && (
+                <div className="mb-6">
+                  <h4 className="text-sm font-bold text-gray-900 mb-3">PMGG 2025</h4>
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="text-gray-500 text-xs">
+                        <th className="text-left py-1"></th>
+                        <th className="text-right py-1 font-medium">PTA</th>
+                        <th className="text-right py-1 font-medium">CONF (%)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {bull.pmggData.map((row, index) => (
+                        <tr key={index} className="border-b border-gray-100">
+                          <td className="py-1.5 text-gray-700 text-xs">{row.trait}</td>
+                          <td className="py-1.5 text-right font-medium text-gray-900 text-xs">{row.pta}</td>
+                          <td className="py-1.5 text-right text-gray-600 text-xs">{row.conf}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               )}
 
-              {/* Pedigree Section */}
-              {bull.pedigree && (
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">PEDIGRÍ</h3>
-                  <p className="text-sm text-purple-600 font-semibold mb-4">{bull.pedigree.title}</p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {/* Sire (Padre) */}
-                    <div className="bg-white rounded-lg p-4 border border-gray-200">
-                      <p className="text-xs text-gray-500 mb-1">PADRE</p>
-                      <p className="font-semibold text-gray-900 text-sm">{bull.pedigree.sire.name}</p>
-                      {bull.pedigree.sire.registro && (
-                        <p className="text-xs text-gray-500">{bull.pedigree.sire.registro}</p>
-                      )}
-                      <div className="mt-3 space-y-2 text-xs">
-                        <div>
-                          <span className="text-gray-500">Abuelo Pat.: </span>
-                          <span className="text-gray-700 font-medium">{bull.pedigree.sire.siresSire}</span>
-                        </div>
-                        <div>
-                          <span className="text-gray-500">Abuela Pat.: </span>
-                          <span className="text-gray-700 font-medium">{bull.pedigree.sire.siresDam}</span>
-                        </div>
-                      </div>
+              {/* Progenie */}
+              {bull.progenieData && (
+                <div className="border-t pt-4">
+                  <h4 className="text-sm font-bold text-gray-900 mb-3">PROGÉNIE</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">NF</span>
+                      <span className="text-gray-900">{bull.progenieData.nf}</span>
                     </div>
-
-                    {/* Dam (Madre) */}
-                    <div className="bg-white rounded-lg p-4 border border-gray-200">
-                      <p className="text-xs text-gray-500 mb-1">MADRE</p>
-                      <p className="font-semibold text-gray-900 text-sm">{bull.pedigree.dam.name}</p>
-                      {bull.pedigree.dam.registro && (
-                        <p className="text-xs text-gray-500">{bull.pedigree.dam.registro}</p>
-                      )}
-                      <div className="mt-3 space-y-2 text-xs">
-                        <div>
-                          <span className="text-gray-500">Abuelo Mat.: </span>
-                          <span className="text-gray-700 font-medium">{bull.pedigree.dam.damsSire}</span>
-                        </div>
-                        <div>
-                          <span className="text-gray-500">Abuela Mat.: </span>
-                          <span className="text-gray-700 font-medium">{bull.pedigree.dam.damsDam}</span>
-                        </div>
-                      </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">NR</span>
+                      <span className="text-gray-900">{bull.progenieData.nr}</span>
                     </div>
                   </div>
                 </div>
               )}
+            </div>
 
-              {/* PNMGL Table - only show if has data */}
-              {hasTableData(bull.pnmglData) && (
-                <div className="mt-8">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">PNMGL 2025</h3>
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-gray-500">
-                        <th className="text-left py-2"></th>
-                        <th className="text-center py-2 font-medium">PTA</th>
-                        <th className="text-center py-2 font-medium">CONF (%)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {bull.pnmglData.filter(row => row.pta !== "--" || row.conf !== "--").map((row, index) => (
-                        <tr key={index} className="border-b border-gray-200">
-                          <td className="py-2 text-gray-700">{row.trait}</td>
-                          <td className="py-2 text-center font-medium text-gray-900">{row.pta}</td>
-                          <td className="py-2 text-center text-gray-600">{row.conf}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
+            {/* Right Column - Pedigree */}
+            <div className="p-6 bg-gray-50">
+              <h3 className="text-base font-semibold text-gray-900 mb-4 italic">Pedigree</h3>
+              
+              {bull.pedigree && (
+                <div className="relative">
+                  {/* Pedigree Tree Structure */}
+                  <div className="space-y-4">
+                    {/* Sire Side */}
+                    <div className="flex items-start">
+                      <div className="bg-teal-500 text-white px-3 py-2 rounded text-xs font-medium min-w-[180px]">
+                        {bull.pedigree.sire.name}
+                      </div>
+                      <div className="flex flex-col ml-2 space-y-2">
+                        <div className="flex items-center">
+                          <div className="w-6 h-px bg-teal-400"></div>
+                          <div className="bg-orange-400 text-white px-2 py-1 rounded text-[10px] font-medium">
+                            {bull.pedigree.sire.siresSire}
+                          </div>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-6 h-px bg-teal-400"></div>
+                          <div className="bg-orange-400 text-white px-2 py-1 rounded text-[10px] font-medium">
+                            {bull.pedigree.sire.siresDam}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-              {/* ABCZ Table - only show if has data */}
-              {hasTableData(bull.abczData) && (
-                <div className="mt-8">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">ABCZ 2025</h3>
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-gray-500">
-                        <th className="text-left py-2"></th>
-                        <th className="text-center py-2 font-medium">PTA</th>
-                        <th className="text-center py-2 font-medium">CONF (%)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {bull.abczData.filter(row => row.pta !== "--" || row.conf !== "--").map((row, index) => (
-                        <tr key={index} className="border-b border-gray-200">
-                          <td className="py-2 text-gray-700">{row.trait}</td>
-                          <td className="py-2 text-center font-medium text-gray-900">{row.pta}</td>
-                          <td className="py-2 text-center text-gray-600">{row.conf}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                    {/* Connection line */}
+                    <div className="h-8 border-l-2 border-teal-400 ml-4"></div>
+
+                    {/* Dam Side */}
+                    <div className="flex items-start">
+                      <div className="bg-teal-500 text-white px-3 py-2 rounded text-xs font-medium min-w-[180px]">
+                        {bull.pedigree.dam.name}
+                      </div>
+                      <div className="flex flex-col ml-2 space-y-2">
+                        <div className="flex items-center">
+                          <div className="w-6 h-px bg-teal-400"></div>
+                          <div className="bg-orange-400 text-white px-2 py-1 rounded text-[10px] font-medium">
+                            {bull.pedigree.dam.damsSire}
+                          </div>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-6 h-px bg-teal-400"></div>
+                          <div className="bg-orange-400 text-white px-2 py-1 rounded text-[10px] font-medium">
+                            {bull.pedigree.dam.damsDam}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
