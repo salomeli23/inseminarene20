@@ -76,9 +76,10 @@ interface BullData {
 interface BullDetailPageProps {
   bullId: string
   onBack: () => void
+  onHome?: () => void
 }
 
-function BullDetailPage({ bullId, onBack }: BullDetailPageProps) {
+function BullDetailPage({ bullId, onBack, onHome }: BullDetailPageProps) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
