@@ -53,6 +53,13 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
   const thumbnails = bull.thumbnails || [bull.imageUrl]
   const [selectedImage, setSelectedImage] = useState(bull.imageUrl)
 
+  // Helper to check if value is empty
+  const hasValue = (val: string) => val && val !== "--" && val !== ""
+
+  // Check if tables have any real data
+  const hasTableData = (data: Array<{ pta: string; conf: string }>) => 
+    data.some(row => row.pta !== "--" || row.conf !== "--")
+
   return (
     <div className="min-h-screen bg-white">
       {/* Back Button */}
@@ -83,18 +90,12 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
               <button className="text-gray-400 hover:text-red-500">
                 <Heart className="w-6 h-6" />
               </button>
-              <div className="flex items-center gap-2">
-                <span className="text-gray-600">Evaluaciones</span>
-                <select className="border rounded-lg px-3 py-1.5 text-sm bg-white">
-                  <option>PNMGL</option>
-                </select>
-              </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Left Column */}
-            <div className="p-6 border-r">
+            <div className="p-6 lg:border-r">
               {/* Buy Button */}
               <a
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
@@ -116,28 +117,25 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
                 />
               </div>
 
-              {/* Thumbnail Gallery */}
-              <div className="flex gap-2 mb-6">
-                {thumbnails.map((thumb, index) => (
-                  <img
-                    key={index}
-                    src={thumb}
-                    alt={`${bull.name} vista ${index + 1}`}
-                    onClick={() => setSelectedImage(thumb)}
-                    className={`w-16 h-16 object-cover rounded-lg border-2 cursor-pointer transition-colors ${
-                      selectedImage === thumb ? 'border-[#00A0B0]' : 'border-gray-200 hover:border-[#00A0B0]'
-                    }`}
-                  />
-                ))}
-              </div>
+              {/* Thumbnail Gallery - only show if multiple images */}
+              {thumbnails.length > 1 && (
+                <div className="flex gap-2 mb-6">
+                  {thumbnails.map((thumb, index) => (
+                    <img
+                      key={index}
+                      src={thumb}
+                      alt={`${bull.name} vista ${index + 1}`}
+                      onClick={() => setSelectedImage(thumb)}
+                      className={`w-16 h-16 object-cover rounded-lg border-2 cursor-pointer transition-colors ${
+                        selectedImage === thumb ? 'border-[#00A0B0]' : 'border-gray-200 hover:border-[#00A0B0]'
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
 
               {/* Logos */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-full border-2 border-purple-600 flex items-center justify-center bg-white">
-                    <span className="text-[8px] font-bold text-purple-600 text-center leading-tight">TORO<br/>PROVADO</span>
-                  </div>
-                </div>
                 {bull.hasGenChoice && (
                   <div className="flex items-center gap-1">
                     <span className="text-sm text-[#00A0B0] font-bold italic">GenChoice</span>
@@ -152,7 +150,7 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
                 )}
               </div>
 
-              {/* General Information */}
+              {/* General Information - only show fields with data */}
               <div className="border-t pt-4">
                 <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b-2 border-purple-400 italic">
                   Informaciones generales
@@ -162,71 +160,66 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
                     <span className="font-semibold text-gray-700">Nome</span>
                     <p className="text-gray-600">{bull.fullName}</p>
                   </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">Registro</span>
-                    <p className="text-gray-600">{bull.registro}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">Nasc</span>
-                    <p className="text-gray-600">{bull.nasc}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">Criador</span>
-                    <p className="text-gray-600">{bull.criador}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">Proprietário</span>
-                    <p className="text-gray-600">{bull.proprietario}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">Lactação da Mãe</span>
-                    <p className="text-gray-600">{bull.lactacaoMae}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">PTA Leite</span>
-                    <p className="text-gray-600">{bull.ptaLeite}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">Beta Caseína</span>
-                    <p className="text-gray-600">{bull.betaCaseina}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">Kappa Caseína</span>
-                    <p className="text-gray-600">{bull.kappaCaseina}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-700">Beta Lacto</span>
-                    <p className="text-gray-600">{bull.betaLacto}</p>
-                  </div>
+                  {hasValue(bull.registro) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">Registro</span>
+                      <p className="text-gray-600">{bull.registro}</p>
+                    </div>
+                  )}
+                  {hasValue(bull.nasc) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">Nasc</span>
+                      <p className="text-gray-600">{bull.nasc}</p>
+                    </div>
+                  )}
+                  {hasValue(bull.criador) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">Criador</span>
+                      <p className="text-gray-600">{bull.criador}</p>
+                    </div>
+                  )}
+                  {hasValue(bull.proprietario) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">Proprietário</span>
+                      <p className="text-gray-600">{bull.proprietario}</p>
+                    </div>
+                  )}
+                  {hasValue(bull.lactacaoMae) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">Lactação da Mãe</span>
+                      <p className="text-gray-600">{bull.lactacaoMae}</p>
+                    </div>
+                  )}
+                  {hasValue(bull.ptaLeite) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">PTA Leite</span>
+                      <p className="text-gray-600">{bull.ptaLeite}</p>
+                    </div>
+                  )}
+                  {hasValue(bull.betaCaseina) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">Beta Caseína</span>
+                      <p className="text-gray-600">{bull.betaCaseina}</p>
+                    </div>
+                  )}
+                  {hasValue(bull.kappaCaseina) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">Kappa Caseína</span>
+                      <p className="text-gray-600">{bull.kappaCaseina}</p>
+                    </div>
+                  )}
+                  {hasValue(bull.betaLacto) && (
+                    <div>
+                      <span className="font-semibold text-gray-700">Beta Lacto</span>
+                      <p className="text-gray-600">{bull.betaLacto}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Evaluation Tables */}
-            <div className="p-6 bg-gray-50 overflow-y-auto max-h-[900px]">
-              {/* PNMGL 2025 Table */}
-              <div className="mb-8">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">PNMGL 2025</h3>
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-gray-500">
-                      <th className="text-left py-2"></th>
-                      <th className="text-center py-2 font-medium">PTA</th>
-                      <th className="text-center py-2 font-medium">CONF (%)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bull.pnmglData.map((row, index) => (
-                      <tr key={index} className="border-b border-gray-200">
-                        <td className="py-2 text-gray-700">{row.trait}</td>
-                        <td className="py-2 text-center font-medium text-gray-900">{row.pta}</td>
-                        <td className="py-2 text-center text-gray-600">{row.conf}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
+            {/* Right Column - Pedigree Only (no empty tables) */}
+            <div className="p-6 bg-gray-50">
               {/* Pedigree Image */}
               {bull.pedigreeImage && (
                 <div className="mb-8">
@@ -238,36 +231,13 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
                 </div>
               )}
 
-              {/* ABCZ 2025 Table */}
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-4">ABCZ 2025</h3>
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-gray-500">
-                      <th className="text-left py-2"></th>
-                      <th className="text-center py-2 font-medium">PTA</th>
-                      <th className="text-center py-2 font-medium">CONF (%)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bull.abczData.map((row, index) => (
-                      <tr key={index} className="border-b border-gray-200">
-                        <td className="py-2 text-gray-700">{row.trait}</td>
-                        <td className="py-2 text-center font-medium text-gray-900">{row.pta}</td>
-                        <td className="py-2 text-center text-gray-600">{row.conf}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
               {/* Pedigree Section */}
               {bull.pedigree && (
-                <div className="mt-8 pt-6 border-t border-gray-200">
+                <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-4">PEDIGRÍ</h3>
-                  <p className="text-sm text-[#00A0B0] font-semibold mb-4">{bull.pedigree.title}</p>
+                  <p className="text-sm text-purple-600 font-semibold mb-4">{bull.pedigree.title}</p>
                   
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Sire (Padre) */}
                     <div className="bg-white rounded-lg p-4 border border-gray-200">
                       <p className="text-xs text-gray-500 mb-1">PADRE</p>
@@ -276,12 +246,12 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
                         <p className="text-xs text-gray-500">{bull.pedigree.sire.registro}</p>
                       )}
                       <div className="mt-3 space-y-2 text-xs">
-                        <div className="flex justify-between">
-                          <span className="text-gray-500">Abuelo Pat.:</span>
+                        <div>
+                          <span className="text-gray-500">Abuelo Pat.: </span>
                           <span className="text-gray-700 font-medium">{bull.pedigree.sire.siresSire}</span>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-500">Abuela Pat.:</span>
+                        <div>
+                          <span className="text-gray-500">Abuela Pat.: </span>
                           <span className="text-gray-700 font-medium">{bull.pedigree.sire.siresDam}</span>
                         </div>
                       </div>
@@ -295,17 +265,67 @@ export default function GirolandoBullDetailPage({ bull, onBack }: GirolandoBullD
                         <p className="text-xs text-gray-500">{bull.pedigree.dam.registro}</p>
                       )}
                       <div className="mt-3 space-y-2 text-xs">
-                        <div className="flex justify-between">
-                          <span className="text-gray-500">Abuelo Mat.:</span>
+                        <div>
+                          <span className="text-gray-500">Abuelo Mat.: </span>
                           <span className="text-gray-700 font-medium">{bull.pedigree.dam.damsSire}</span>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-500">Abuela Mat.:</span>
+                        <div>
+                          <span className="text-gray-500">Abuela Mat.: </span>
                           <span className="text-gray-700 font-medium">{bull.pedigree.dam.damsDam}</span>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+              )}
+
+              {/* PNMGL Table - only show if has data */}
+              {hasTableData(bull.pnmglData) && (
+                <div className="mt-8">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">PNMGL 2025</h3>
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="text-gray-500">
+                        <th className="text-left py-2"></th>
+                        <th className="text-center py-2 font-medium">PTA</th>
+                        <th className="text-center py-2 font-medium">CONF (%)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {bull.pnmglData.filter(row => row.pta !== "--" || row.conf !== "--").map((row, index) => (
+                        <tr key={index} className="border-b border-gray-200">
+                          <td className="py-2 text-gray-700">{row.trait}</td>
+                          <td className="py-2 text-center font-medium text-gray-900">{row.pta}</td>
+                          <td className="py-2 text-center text-gray-600">{row.conf}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {/* ABCZ Table - only show if has data */}
+              {hasTableData(bull.abczData) && (
+                <div className="mt-8">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">ABCZ 2025</h3>
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="text-gray-500">
+                        <th className="text-left py-2"></th>
+                        <th className="text-center py-2 font-medium">PTA</th>
+                        <th className="text-center py-2 font-medium">CONF (%)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {bull.abczData.filter(row => row.pta !== "--" || row.conf !== "--").map((row, index) => (
+                        <tr key={index} className="border-b border-gray-200">
+                          <td className="py-2 text-gray-700">{row.trait}</td>
+                          <td className="py-2 text-center font-medium text-gray-900">{row.pta}</td>
+                          <td className="py-2 text-center text-gray-600">{row.conf}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               )}
             </div>
