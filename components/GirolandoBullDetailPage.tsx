@@ -38,8 +38,12 @@ export interface GirolandoBullData {
   thumbnails?: string[]
   pnmglData: Array<{ trait: string; pta: string; conf: string }>
   abczData: Array<{ trait: string; pta: string; conf: string }>
+  pmggData?: Array<{ trait: string; pta: string; conf: string }>
+  progenieData?: { nf: string; nr: string }
   hasGenChoice?: boolean
   hasToro2A2?: boolean
+  hasEmTeste?: boolean
+  hasGenomico?: boolean
   pedigree?: PedigreeData
   pedigreeImage?: string
 }
