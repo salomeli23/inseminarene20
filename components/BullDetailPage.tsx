@@ -2,6 +2,7 @@
 
 import { useEffect } from "react"
 import { ArrowLeft } from "lucide-react"
+import Header from "./Header"
 
 interface BullData {
   id: string
