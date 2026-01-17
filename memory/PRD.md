@@ -26,6 +26,7 @@ Crear y configurar un sitio web para "Inseminar de Colombia", una empresa colomb
 │   ├── page.tsx           # Homepage with hero, categories, contact
 │   └── globals.css
 ├── components/
+│   ├── Header.tsx         # Reusable header component with logo, partners, menu
 │   ├── BullDetailPage.tsx # Legacy detail page (non-refactored breeds)
 │   ├── EdankDetailPage.tsx # Custom detail page for EDANK bull
 │   ├── GyrBullDetailPage.tsx, gyrBullsData.ts, GyrPage.tsx
@@ -48,6 +49,7 @@ Crear y configurar un sitio web para "Inseminar de Colombia", una empresa colomb
 - [x] Category cards with thematic backgrounds
 - [x] All breed pages with data separation pattern
 - [x] Bull detail pages with genetic information
+- [x] **Header component reutilizable** (Added Jan 17, 2025) - Logo Inseminar, logos de socios, menú (Inicio, Categorías, Contáctanos) en todas las páginas de categoría y detalle de toros
 - [x] Thumbnail gallery for bull images (main photo + pedigree)
 - [x] Floating WhatsApp contact button
 - [x] Dynamic "Back to Category" button
