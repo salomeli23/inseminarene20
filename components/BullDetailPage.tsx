@@ -2022,7 +2022,9 @@ function BullDetailPage({ bullId, onBack, onHome }: BullDetailPageProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-white border-b border-gray-200">
+      <Header onBack={onHome || onBack} />
+      
+      <div className="bg-white border-b border-gray-200 pt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <button
             onClick={onBack}
@@ -2031,7 +2033,6 @@ function BullDetailPage({ bullId, onBack, onHome }: BullDetailPageProps) {
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Volver a {categoryName}</span>
           </button>
-          <img src="/logoinseminar.png" alt="Inseminar" className="h-16 object-contain" />
         </div>
       </div>
       <div className="border-b-8 border-[#00A0B0]">
