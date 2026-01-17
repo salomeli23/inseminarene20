@@ -58,6 +58,22 @@ function NelorePage({ onBack }: NelorePageProps) {
       summary: "Toro NELORE con PregCheck BR 101 y excelente producción temprana",
       highlights: ["PregCheck: 101", "P120 TOP 3%", "P210 TOP 4%"],
     },
+    {
+      id: "juizguadalupe",
+      name: "JUIZ GUADALUPE",
+      registration: "FGP A4828",
+      imageUrl: "/JUIZ_GUADALUPE_PHOTO.jpg",
+      summary: "Toro NELORE joven con AOL TOP 0.5% y producción élite TOP 3-6%",
+      highlights: ["AOL TOP 0.5%", "P120 TOP 3%", "MGTe TOP 4%"],
+    },
+    {
+      id: "johnnydepp",
+      name: "JOHNNY DEPP",
+      registration: "GSCA 1225",
+      imageUrl: "/JOHNNY_DEPP_PHOTO.jpg",
+      summary: "Toro NELORE con PregCheck 100 y excelentes traits STAY TOP 4%",
+      highlights: ["PregCheck: 100", "STAY TOP 4%", "AOL TOP 7%"],
+    },
   ]
 
   if (selectedBull && neloreBullsData[selectedBull]) {
