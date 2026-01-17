@@ -29,10 +29,10 @@ function GirolandoPage({ onBack }: GirolandoPageProps) {
     {
       id: "nemoday",
       name: "NEMO DAY",
-      registration: "001G000050",
-      imageUrl: "/NEMO_DAY_PROFILE.png",
-      summary: "Toro GIROLANDO 3/4 con excelente genética y adaptación tropical",
-      highlights: ["En Test: 2030", "GenChoice", "GIROLANDO 3/4"],
+      registration: "0025-BT",
+      imageUrl: "/NEMO_DAY_PHOTO.jpg",
+      summary: "Toro GIROLANDO 3/4 con PTA Leite Genômico 1.746 y genética A2A2",
+      highlights: ["PTA Genômico: 1.746", "A2A2", "Lac. Mãe: 17.178 kg"],
     },
   ]
 
