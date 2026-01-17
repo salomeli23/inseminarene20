@@ -34,6 +34,14 @@ function Girolando58Page({ onBack }: Girolando58PageProps) {
       summary: "Toro GIROLANDO 5/8 con PTA Leite Genômico 1.008 y genética A2A2",
       highlights: ["PTA Genômico: 1.008", "A2A2", "Lac. Mãe: 8.631 kg"],
     },
+    {
+      id: "epico",
+      name: "ÉPICO (PS)",
+      registration: "5015-CC",
+      imageUrl: "/EPICO_PS_PHOTO.jpg",
+      summary: "Toro GIROLANDO 5/8 con PTA Leite Genômico 1.493 y excelente lactación materna",
+      highlights: ["PTA Genômico: 1.493", "A2A2", "Lac. Mãe: 14.557 kg"],
+    },
   ]
 
   if (selectedBull && girolando58BullsData[selectedBull]) {
