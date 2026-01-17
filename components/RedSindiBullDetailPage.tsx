@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ArrowLeft, Download, Heart, ShoppingCart } from "lucide-react"
+import Header from "./Header"
 
 export interface PedigreeAnimal {
   name: string
@@ -41,16 +42,19 @@ export interface RedSindiBullData {
 interface RedSindiBullDetailPageProps {
   bull: RedSindiBullData
   onBack: () => void
+  onHome?: () => void
 }
 
-export default function RedSindiBullDetailPage({ bull, onBack }: RedSindiBullDetailPageProps) {
+export default function RedSindiBullDetailPage({ bull, onBack, onHome }: RedSindiBullDetailPageProps) {
   const thumbnails = bull.thumbnails || [bull.imageUrl]
   const [selectedImage, setSelectedImage] = useState(bull.imageUrl)
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      <Header onBack={onHome || onBack} />
+      
+      {/* Back to Category Button */}
+      <div className="max-w-7xl mx-auto px-4 pt-28 pb-4">
         <button
           onClick={onBack}
           className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"

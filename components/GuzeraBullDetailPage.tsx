@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ArrowLeft, Download, Heart, ShoppingCart } from "lucide-react"
+import Header from "./Header"
 
 export interface PedigreeAnimal {
   name: string
@@ -47,9 +48,10 @@ export interface GuzeraBullData {
 interface GuzeraBullDetailPageProps {
   bull: GuzeraBullData
   onBack: () => void
+  onHome?: () => void
 }
 
-export default function GuzeraBullDetailPage({ bull, onBack }: GuzeraBullDetailPageProps) {
+export default function GuzeraBullDetailPage({ bull, onBack, onHome }: GuzeraBullDetailPageProps) {
   const thumbnails = bull.thumbnails || [bull.imageUrl]
   const [selectedImage, setSelectedImage] = useState(bull.imageUrl)
 
@@ -57,7 +59,19 @@ export default function GuzeraBullDetailPage({ bull, onBack }: GuzeraBullDetailP
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Back Button */}
+      <Header onBack={onHome || onBack} />
+      
+      {/* Back to Category Button */}
+      <div className="max-w-7xl mx-auto px-4 pt-28 pb-4">
+        <button
+          onClick={onBack}
+          className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+          data-testid={`back-from-${bull.id}-btn`}
+        >
+          <ArrowLeft className="w-5 h-5 mr-2" />
+          <span>Volver a GUZERA</span>
+        </button>
+      </div>
       <div className="max-w-7xl mx-auto px-4 py-4">
         <button
           onClick={onBack}
