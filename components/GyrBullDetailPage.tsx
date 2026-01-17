@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ArrowLeft, Download, Heart, ShoppingCart } from "lucide-react"
+import Header from "./Header"
 
 export interface PedigreeAnimal {
   name: string
@@ -47,16 +48,19 @@ export interface GyrBullData {
 interface GyrBullDetailPageProps {
   bull: GyrBullData
   onBack: () => void
+  onHome?: () => void
 }
 
-export default function GyrBullDetailPage({ bull, onBack }: GyrBullDetailPageProps) {
+export default function GyrBullDetailPage({ bull, onBack, onHome }: GyrBullDetailPageProps) {
   const thumbnails = bull.thumbnails || [bull.imageUrl]
   const [selectedImage, setSelectedImage] = useState(bull.imageUrl)
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      <Header onBack={onHome || onBack} />
+      
+      {/* Back to Category Button */}
+      <div className="max-w-7xl mx-auto px-4 pt-28 pb-4">
         <button
           onClick={onBack}
           className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
