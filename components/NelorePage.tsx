@@ -118,26 +118,14 @@ function NelorePage({ onBack }: NelorePageProps) {
   ]
 
   if (selectedBull && neloreBullsData[selectedBull]) {
-    return <NeloreBullDetailPage bull={neloreBullsData[selectedBull]} onBack={() => setSelectedBull(null)} />
+    return <NeloreBullDetailPage bull={neloreBullsData[selectedBull]} onBack={() => setSelectedBull(null)} onHome={onBack} />
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50">
-      <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-20">
-            <button
-              onClick={onBack}
-              className="flex items-center space-x-2 text-gray-700 hover:text-slate-600 transition-colors group"
-            >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              <span className="font-medium">Volver a Categorías</span>
-            </button>
-          </div>
-        </nav>
-      </header>
+      <Header onBack={onBack} />
 
-      <main className="pt-20">
+      <main className="pt-28">
         <section className="relative bg-gradient-to-br from-slate-700 via-gray-700 to-zinc-700 text-white py-20 overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
