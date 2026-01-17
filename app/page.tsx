@@ -8,6 +8,7 @@ import PardoSuizoPage from "../components/PardoSuizoPage"
 import AyrshirePage from "../components/AyrshirePage"
 import GyrPage from "../components/GyrPage"
 import GirolandoPage from "../components/GirolandoPage"
+import Girolando58Page from "../components/Girolando58Page"
 
 interface Breed {
   name: string
@@ -26,7 +27,7 @@ interface Category {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
-  const [currentPage, setCurrentPage] = useState<"home" | "holstein" | "jersey" | "pardo-suizo" | "ayrshire" | "gyr" | "girolando">("home")
+  const [currentPage, setCurrentPage] = useState<"home" | "holstein" | "jersey" | "pardo-suizo" | "ayrshire" | "gyr" | "girolando" | "girolando58">("home")
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const heroImages = [
@@ -114,6 +115,10 @@ export default function Home() {
 
   if (currentPage === "girolando") {
     return <GirolandoPage onBack={() => setCurrentPage("home")} />
+  }
+
+  if (currentPage === "girolando58") {
+    return <Girolando58Page onBack={() => setCurrentPage("home")} />
   }
 
   return (
@@ -342,6 +347,8 @@ export default function Home() {
                                 setCurrentPage("gyr")
                               } else if (breed.name === "GIROLANDO 3/4") {
                                 setCurrentPage("girolando")
+                              } else if (breed.name === "GIROLANDO 5/8") {
+                                setCurrentPage("girolando58")
                               }
                             }}
                           >
