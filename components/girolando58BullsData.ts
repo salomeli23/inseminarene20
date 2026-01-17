@@ -1,0 +1,58 @@
+import { Girolando58BullData } from "./Girolando58BullDetailPage"
+
+export const girolando58BullsData: Record<string, Girolando58BullData> = {
+  comandante: {
+    id: "comandante",
+    code: "001G000051",
+    name: "COMANDANTE",
+    fullName: "COMANDANTE FIV DA PRATA JAC",
+    registro: "9701-BV",
+    nasc: "05/04/2020",
+    criador: "JOSÉ ANTÔNIO DA SILVA CLEMENTE",
+    proprietario: "JOSÉ ANTÔNIO DA SILVA CLEMENTE",
+    lactacaoMae: "8.631,79 Kg em 365 dias",
+    ptaLeite: "EM TESTE",
+    betaCaseina: "A2A2",
+    kappaCaseina: "AB",
+    betaLacto: "--",
+    imageUrl: "/COMANDANTE_PHOTO.jpg",
+    hasGenChoice: false,
+    hasToro2A2: true,
+    hasEmTeste: false,
+    hasGenomico: true,
+    pmggData: [
+      { trait: "PTA Leite", pta: "--", conf: "--" },
+      { trait: "PTA Leite Genômico", pta: "1.008", conf: "73" },
+      { trait: "Intervalo de Parto", pta: "4", conf: "43" },
+      { trait: "Idade Primeiro Parto", pta: "-11", conf: "66" },
+      { trait: "Longevidade", pta: "1,30", conf: "54" },
+      { trait: "TE", pta: "--", conf: "--" },
+      { trait: "GPTA PN", pta: "-0,50", conf: "65" },
+      { trait: "GPTA PG", pta: "-0,30", conf: "84" },
+      { trait: "IPPLG", pta: "0,20", conf: "--" },
+      { trait: "IETG", pta: "0,70", conf: "--" },
+      { trait: "IFPG", pta: "-0,90", conf: "--" },
+      { trait: "IRG", pta: "-0,40", conf: "--" },
+      { trait: "CPLFG", pta: "0,40", conf: "--" },
+    ],
+    progenieData: {
+      nf: "--",
+      nr: "--",
+    },
+    pedigree: {
+      title: "VINEYARD x QUERO-QUERO",
+      sire: {
+        name: "DELTA VINEYARD",
+        registro: "",
+        siresSire: "DELTA MAGISTER",
+        siresDam: "DELTA JAZZ",
+      },
+      dam: {
+        name: "HARMONIA TERRA VERMELHA",
+        registro: "",
+        damsSire: "C.A. QUERO-QUERO",
+        damsDam: "QUARTINHA TERRA VERMELHA",
+      },
+    },
+  },
+}
