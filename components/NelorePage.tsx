@@ -74,6 +74,30 @@ function NelorePage({ onBack }: NelorePageProps) {
       summary: "Toro NELORE con PregCheck 100 y excelentes traits STAY TOP 4%",
       highlights: ["PregCheck: 100", "STAY TOP 4%", "AOL TOP 7%"],
     },
+    {
+      id: "brasao",
+      name: "BRASÃO DE NAVIRAI",
+      registration: "CSCN 20435",
+      imageUrl: "/BRASAO_NAVIRAI_PHOTO.jpg",
+      summary: "Toro NELORE con 3P TOP 0.5% y STAY TOP 2%, excepcional para longevidad",
+      highlights: ["3P TOP 0.5%", "STAY TOP 2%", "ACAB TOP 2%"],
+    },
+    {
+      id: "corvette",
+      name: "CORVETTE DE NAVIRAI",
+      registration: "CSCC 8474",
+      imageUrl: "/CORVETTE_NAVIRAI_PHOTO.jpg",
+      summary: "Toro NELORE elite con MGTe TOP 2% y P365/P450 TOP 2%",
+      highlights: ["MGTe TOP 2%", "P365 TOP 2%", "P450 TOP 2%"],
+    },
+    {
+      id: "dinamite",
+      name: "DINAMITE DA MAGDA",
+      registration: "MAGD 3422",
+      imageUrl: "/DINAMITE_MAGDA_PHOTO.jpg",
+      summary: "Toro NELORE con PregCheck 102 y MARM TOP 0.5%, excepcional para marmoreio",
+      highlights: ["PregCheck: 102", "MARM TOP 0.5%", "P365 TOP 3%"],
+    },
   ]
 
   if (selectedBull && neloreBullsData[selectedBull]) {
