@@ -42,6 +42,22 @@ function NelorePage({ onBack }: NelorePageProps) {
       summary: "Toro NELORE joven con AOL TOP 0.5% y excelentes traits de carcaça",
       highlights: ["AOL TOP 0.5%", "ACAB TOP 2%", "STAY TOP 4%"],
     },
+    {
+      id: "tenente",
+      name: "TENENTE DA TERRA BRAVA",
+      registration: "EFIF 6140",
+      imageUrl: "/TENENTE_PHOTO.jpg",
+      summary: "Toro NELORE con MGTe TOP 2% y excepcionales traits maternales y carcaça",
+      highlights: ["MGTe TOP 2%", "STAY TOP 0.5%", "ACAB TOP 1%"],
+    },
+    {
+      id: "linear",
+      name: "LINEAR DA BOTICAO",
+      registration: "BOM 3293",
+      imageUrl: "/LINEAR_BOTICAO_PHOTO.jpg",
+      summary: "Toro NELORE con PregCheck BR 101 y excelente producción temprana",
+      highlights: ["PregCheck: 101", "P120 TOP 3%", "P210 TOP 4%"],
+    },
   ]
 
   if (selectedBull && neloreBullsData[selectedBull]) {
