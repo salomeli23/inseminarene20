@@ -10,6 +10,7 @@ import GyrPage from "../components/GyrPage"
 import GirolandoPage from "../components/GirolandoPage"
 import Girolando58Page from "../components/Girolando58Page"
 import GuzeraPage from "../components/GuzeraPage"
+import RedSindiPage from "../components/RedSindiPage"
 
 interface Breed {
   name: string
@@ -28,7 +29,7 @@ interface Category {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
-  const [currentPage, setCurrentPage] = useState<"home" | "holstein" | "jersey" | "pardo-suizo" | "ayrshire" | "gyr" | "girolando" | "girolando58" | "guzera">("home")
+  const [currentPage, setCurrentPage] = useState<"home" | "holstein" | "jersey" | "pardo-suizo" | "ayrshire" | "gyr" | "girolando" | "girolando58" | "guzera" | "redsindi">("home")
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const heroImages = [
@@ -124,6 +125,10 @@ export default function Home() {
 
   if (currentPage === "guzera") {
     return <GuzeraPage onBack={() => setCurrentPage("home")} />
+  }
+
+  if (currentPage === "redsindi") {
+    return <RedSindiPage onBack={() => setCurrentPage("home")} />
   }
 
   return (
@@ -356,6 +361,8 @@ export default function Home() {
                                 setCurrentPage("girolando58")
                               } else if (breed.name === "GUZERA") {
                                 setCurrentPage("guzera")
+                              } else if (breed.name === "RED SINDI") {
+                                setCurrentPage("redsindi")
                               }
                             }}
                           >
