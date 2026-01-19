@@ -45,7 +45,7 @@ export default function Header({ onBack, showBackButton = true }: HeaderProps) {
               Categorías
             </button>
             <a
-              href="https://wa.me/573001234567"
+              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '573001234567'}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-blue-600 to-sky-600 text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-lg transition-all"
@@ -85,7 +85,7 @@ export default function Header({ onBack, showBackButton = true }: HeaderProps) {
               Categorías
             </button>
             <a
-              href="https://wa.me/573001234567"
+              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '573001234567'}`}
               target="_blank"
               rel="noopener noreferrer"
               className="block px-4 py-2 text-blue-600 font-medium hover:bg-gray-50 rounded-lg transition-colors"
